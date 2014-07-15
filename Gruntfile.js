@@ -10,7 +10,7 @@ module.exports = function(grunt) {
                     expand: true,                  // Enable dynamic expansion
                     cwd: 'images/',                   // Src matches are relative to this path
                     src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-                    dest: 'public/images/'                  // Destination path prefix
+                    dest: 'BUILD/images/'                  // Destination path prefix
                 }]
             }
         },
@@ -19,24 +19,24 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     //'js/libs/*.js', // All JS in the libs folder
-                    'js/libs/angular.js',
-                    'js/libs/angular-route.js',
-                    'js/*.js' 
+                    'DEV/js/libs/angular.js',
+                    'DEV/js/libs/angular-route.js',
+                    'DEV/js/*.js' 
                 ],
-                dest: 'public/js/main.js',
+                dest: 'BUILD/js/main.js',
             }
         },
 
         uglify: {
             build: {
-                src: 'public/js/main.js',
-                dest: 'public/js/main.min.js'
+                src: 'BUILD/js/main.js',
+                dest: 'BUILD/js/main.min.js'
             }
         },
 
         watch: {
             scripts: {
-                files: ['js/*.js'],
+                files: ['DEV/js/*.js'],
                 tasks: ['concat', 'uglify'],
                 options: {
                     spawn: false,
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
             },
 
             css: {
-                files: ['sass/*.scss'],
+                files: ['DEV/sass/*.scss'],
                 tasks: ['compass'],
                 options: {
                     spawn: false,
@@ -55,8 +55,8 @@ module.exports = function(grunt) {
         compass: {                  
             dist: {                
                 options: {          
-                    sassDir: 'sass',
-                    cssDir: 'public/css',
+                    sassDir: 'DEV/sass',
+                    cssDir: 'BUILD/css',
                     environment: 'development'
                 }
             }

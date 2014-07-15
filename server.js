@@ -35,18 +35,12 @@ var allowCrossDomain = function(req, res, next) {
 
 app.configure(function(){
   app.use(express.logger('dev'));
-  app.use(express.static(__dirname + '/public'));
+  app.use(express.static(__dirname + '/BUILD'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.errorHandler());
   app.use(allowCrossDomain); 
   app.use(app.router);
 });
-
-app.all('*', function(req, res) {
-    res.sendfile('./public/index.html');
-});
-
-
 
 console.log("Express server listening on port 3000");
