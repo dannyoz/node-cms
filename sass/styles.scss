@@ -1,0 +1,18 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// SASS framework by D Osborne  //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+//1. Imporing the standard reset styles via compass and adding CSS3 support
+@import "compass/reset";
+@import "compass/css3";
+
+//2. Common styles divided into sections
+@import "typography";
+@import "globals";
+
+//3. Includes
+
+
+//4. Finesse
+@import "animations";
+
