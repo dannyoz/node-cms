@@ -21,7 +21,10 @@ module.exports = function(grunt) {
                     //'js/libs/*.js', // All JS in the libs folder
                     'DEV/js/libs/angular.js',
                     'DEV/js/libs/angular-route.js',
-                    'DEV/js/*.js' 
+                    'DEV/js/app.js',
+                    'DEV/js/directives/*.js',
+                    'DEV/js/factories/*.js',
+                    'DEV/js/controllers/*.js'
                 ],
                 dest: 'BUILD/js/main.js',
             }
@@ -36,7 +39,11 @@ module.exports = function(grunt) {
 
         watch: {
             scripts: {
-                files: ['DEV/js/*.js'],
+                files: ['DEV/js/*.js',
+                        'DEV/js/directives/*.js',
+                        'DEV/js/factories/*.js',
+                        'DEV/js/controllers/*.js'
+                        ],
                 tasks: ['concat', 'uglify'],
                 options: {
                     spawn: false,
@@ -44,7 +51,11 @@ module.exports = function(grunt) {
             },
 
             css: {
-                files: ['DEV/sass/*.scss'],
+                files: [
+                    'DEV/sass/*.scss', 
+                    'DEV/sass/*/*.scss', 
+                    'DEV/sass/*/*/*.scss'
+                ],
                 tasks: ['compass'],
                 options: {
                     spawn: false,
@@ -57,7 +68,7 @@ module.exports = function(grunt) {
                 options: {          
                     sassDir: 'DEV/sass',
                     cssDir: 'BUILD/css',
-                    environment: 'development'
+                    environment: 'production'
                 }
             }
         },

@@ -2,17 +2,28 @@
 // SASS framework by D Osborne  //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-//1. Imporing the standard reset styles via compass and adding CSS3 support
+// Import the standard reset styles via compass and adding CSS3 support
 @import "compass/reset";
 @import "compass/css3";
 
-//2. Common styles divided into sections
-@import "typography";
-@import "globals";
+// Import variables
+@import "variables/colours";
+@import "variables/dimensions";
+@import "variables/typography";
 
-//3. Includes
+// Import mixins
+@import "mixins/animations";
+@import "mixins/helpers";
+@import "mixins/layout";
+@import "mixins/typography";
 
+// Import global partials
+@import "partials/globals/typography";
+@import "partials/globals/globals";
+@import "partials/globals/links";
 
-//4. Finesse
-@import "animations";
+// Import layout partials
+@import "partials/layout/main";
 
+// Import module partials
+@import "partials/modules/animations";

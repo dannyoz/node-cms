@@ -4,16 +4,11 @@ var app = angular.module('app', ['ngRoute'])
      	$routeProvider
 	        .when('/', {
 	        	templateUrl: '/views/home.html',
-	        	controller: 'home'
+	        	controller: 'main'
 	    })
 	        
 
 		$locationProvider.html5Mode(true);
 	}])
 
-	.controller('home', ['$scope', function($scope) {
-      	$scope.model ={
-      		message: "hello"
-      	}
-  	}])
 

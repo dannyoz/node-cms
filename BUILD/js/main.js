@@ -22546,16 +22546,28 @@ var app = angular.module('app', ['ngRoute'])
      	$routeProvider
 	        .when('/', {
 	        	templateUrl: '/views/home.html',
-	        	controller: 'home'
+	        	controller: 'main'
 	    })
 	        
 
 		$locationProvider.html5Mode(true);
 	}])
 
-	.controller('home', ['$scope', function($scope) {
-      	$scope.model ={
-      		message: "hello"
-      	}
-  	}])
 
+
+.factory('webApp', function() {
+
+    return {
+    	isLoading : true
+    }
+})
+.controller('main', ['$scope', '$http', 'webApp', function ($scope, $http, webApp) {
+
+	// Check to see if feed has loaded
+    $scope.$watch(function(){
+        $scope.isLoading = webApp.isLoading
+    })
+
+    console.log('main controller', $scope.isLoading)
+
+}])
