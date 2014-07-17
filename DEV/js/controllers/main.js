@@ -5,6 +5,6 @@
         $scope.isLoading = webApp.isLoading
     })
 
-    console.log('main controller', $scope.isLoading)
+    console.log('LIVE RELOAD ADDED!!!')
 
 }])

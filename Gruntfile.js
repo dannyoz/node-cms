@@ -46,7 +46,7 @@ module.exports = function(grunt) {
                         ],
                 tasks: ['concat', 'uglify'],
                 options: {
-                    spawn: false,
+                    spawn: false
                 },
             },
 
@@ -60,6 +60,15 @@ module.exports = function(grunt) {
                 options: {
                     spawn: false,
                 }
+            },
+
+            livereload: {
+                options: { livereload: true },
+                files: [
+                    'BUILD/css/*.css',
+                    'BUILD/js/*.js',
+                    'BUILD/views/*.html'
+                    ],
             }
         },
 
