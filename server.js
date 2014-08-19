@@ -43,4 +43,8 @@ app.configure(function(){
   app.use(app.router);
 });
 
+app.all('*', function(req, res) {
+    res.sendfile('./BUILD/index.html');
+});
+
 console.log("Express server listening on port 3000");
