@@ -1,25 +1,28 @@
+$containerWidth:1000px;
 
 body{
 
-	background:$APPlight;
-	color:$APPdark;
+	background:$col-light;
+	color:$col-dark;
 	font-family:$font1;
-	text-align:center;
-	overflow:hidden;
 
-	footer{
+}
 
-		height:0;
-		background-color:lighten($APPdark,10%);
-		@include fitParent("",auto,0,0,0);
+section{
 
-		&.show{
-			height: $footerHeight;
-		}
-	}
+	@include stack;
+	@include boxSizing(40px 20px);
+	@include bevelDivider($col-light,"bottom");
 }
 
 //4. Global classes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.container{
+
+	margin:0 auto;
+	max-width:$containerWidth;
+}
 
 .stack{
 	@include stack;

@@ -1,8 +1,11 @@
 
-$APPlight  : #eeeeee;
-$APPgrey   : #ababab;
-$APPdark   : #222222;
-$APPblue   : rgb(193, 220, 241);
-$APPorange : #eb9f18;
+//Tones
+// --------------------------------
+$col-light  : #eeeeee;
+$col-grey   : #ababab;
+$col-dark   : #222222;
 
-$headerCol : darken($APPdark,10%);
+//Hues
+// --------------------------------
+$col-blue   : rgb(193, 220, 241);
+$col-orange : #eb9f18;
