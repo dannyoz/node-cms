@@ -7,89 +7,182 @@
   <legend>Legend</legend>
   
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
+</fieldset>
   
-  <form>
+<form>
+  
+  <div class="grid-3">
+
     <h2>Form Element</h2>
     
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
+
+  </div>
+
+  <div class="grid-8 push-1">
+  
+    <fieldset> 
+
+      <label class="grid-3" for="text_field">Text Field:</label>
+      <div class="grid-9">
+        <input type="text" id="text_field" />
+      </div>
+
+    </fieldset>
     
-    <p><label for="text_field">Text Field:</label><br />
-    <input type="text" id="text_field" /></p>
+    <fieldset>
+
+      <label class="grid-3" for="text_area">Text Area:</label>
+      <div class="grid-9">
+        <textarea id="text_area"></textarea>
+      </div>
+
+    </fieldset>
     
-    <p><label for="text_area">Text Area:</label><br />
-    <textarea id="text_area"></textarea></p>
+    <fieldset>
+
+      <label class="grid-3" for="select_element">Select Element:</label>
+      <div class="grid-9">
+        <select name="select_element">
+          <optgroup label="Option Group 1">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </optgroup>
+          <optgroup label="Option Group 2">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </optgroup>
+        </select>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
     
-    <p><label for="select_element">Select Element:</label><br />
-      <select name="select_element">
-      <optgroup label="Option Group 1">
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </optgroup>
-      <optgroup label="Option Group 2">
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </optgroup>
-    </select></p>
+      <label class="grid-3" for="radio_buttons">Radio Buttons:</label>
+      <div class="grid-9">
+        <input type="radio" class="radio" name="radio_button" value="radio_1" /> Radio 1<br/>
+        <input type="radio" class="radio" name="radio_button" value="radio_2" /> Radio 2<br/>
+        <input type="radio" class="radio" name="radio_button" value="radio_3" /> Radio 3<br/>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
     
-    <p><label for="radio_buttons">Radio Buttons:</label><br />
-      <input type="radio" class="radio" name="radio_button" value="radio_1" /> Radio 1<br/>
-      <input type="radio" class="radio" name="radio_button" value="radio_2" /> Radio 2<br/>
-      <input type="radio" class="radio" name="radio_button" value="radio_3" /> Radio 3<br/>
-    </p>
+      <label class="grid-3" for="checkboxes">Checkboxes:</label>
+      <div class="grid-9">
+        <input type="checkbox" class="checkbox" name="checkboxes" value="check_1" /> Radio 1<br/>
+        <input type="checkbox" class="checkbox" name="checkboxes" value="check_2" /> Radio 2<br/>
+        <input type="checkbox" class="checkbox" name="checkboxes" value="check_3" /> Radio 3<br/>
+      </div>
     
-    <p><label for="checkboxes">Checkboxes:</label><br />
-      <input type="checkbox" class="checkbox" name="checkboxes" value="check_1" /> Radio 1<br/>
-      <input type="checkbox" class="checkbox" name="checkboxes" value="check_2" /> Radio 2<br/>
-      <input type="checkbox" class="checkbox" name="checkboxes" value="check_3" /> Radio 3<br/>
-    </p>
+    </fieldset>
+
+    <fieldset>
     
-    <p><label for="password">Password:</label><br />
-      <input type="password" class="password" name="password" />
-    </p>
+      <label class="grid-3" for="password">Password:</label>
+      <div class="grid-9">
+        <input type="password" class="password" name="password" />
+      </div>  
     
-    <p><label for="file">File Input:</label><br />
-      <input type="file" class="file" name="file" />
-    </p>
+    </fieldset>
+    
+
+    <fieldset>
+
+      <label class="grid-3" for="file">File Input:</label>
+      <div class="grid-9">
+        <input type="file" class="file" name="file" />
+      </div>  
+    
+    </fieldset>
 
     <h3>HTML5-specific Form Elements</h3>
 
-    <p><label for="email">Email:</label><br />
-      <input type="email">
-    </p>
+    <fieldset>
 
-    <p><label for="url">URL:</label><br />
-      <input type="url">
-    </p>
+      <label class="grid-3" for="email">Email:</label>
+      <div class="grid-9">
+        <input type="email">
+      </div>  
 
-    <p><label for="tel">Telephone:</label><br />
-      <input type="tel">
-    </p>
-
-    <p><label for="number">Number:</label><br />
-      <input type="number" min="0" max="10" step="1" value="5">
-    </p>
-
-    <p><label for="search">Search:</label><br />
-      <input type="search">
-    </p>
-
-    <p><label for="date">Date:</label><br />
-      <input type="date">
-    </p>
-
-    <p><label for="time">Time:</label><br />
-      <input type="time">
-    </p>
-
-    <p><label for="color">Color:</label><br />
-      <input type="color">
-    </p>
-
-    <p><input class="button" type="reset" value="Clear" /> <input class="button" type="submit" value="Submit" />
-    </p>
+    </fieldset>
     
-  </form>
+    <fieldset>
+
+      <label class="grid-3" for="url">URL:</label>
+      <div class="grid-9">
+        <input type="url">
+      </div>  
+
+    </fieldset>
+
+    <fieldset>
+
+      <label class="grid-3" for="tel">Telephone:</label>
+      <div class="grid-9">
+        <input type="tel">
+      </div>  
+
+    </fieldset>
+
+    <fieldset>
+
+      <label class="grid-3" for="number">Number:</label>
+      <div class="grid-9">
+        <input type="number" min="0" max="10" step="1" value="5">
+      </div>  
+    
+    </fieldset>
+
+    <fieldset>
+
+      <label class="grid-3" for="search">Search:</label>
+      <div class="grid-9">
+        <input type="search">
+      </div>  
+    
+    </fieldset>
+
+    <fieldset>
+
+      <label class="grid-3" for="date">Date:</label>
+      <div class="grid-9">
+       <input type="date">
+     </div>  
+
+    </fieldset>
+
+    <fieldset>
+
+      <label class="grid-3" for="time">Time:</label>
+      <div class="grid-9">
+       <input type="time">
+     </div>  
+    
+    </fieldset>
+
+    <fieldset>
+
+      <label class="grid-3" for="color">Color:</label>
+      <div class="grid-9">
+        <input type="color">
+      </div>  
+
+    </fieldset>
+
+    <fieldset>
+      <div class="grid-9 push-3">
+        <input class="button" type="reset" value="Clear" /> 
+        <input class="button" type="submit" value="Submit" />
+      </div>
+    </fieldset>
+
+  </div>
+
   
-</fieldset>
+</form>
+  

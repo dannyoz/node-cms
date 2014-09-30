@@ -1,0 +1,29 @@
+
+fieldset{
+
+	@include boxSizing(20px 0);
+	@include stack;
+}
+
+input{
+
+	&[type="text"], &[type="email"], &[type="password"], &[type="url"], &[type="tel"], &[type="search"]{
+
+		width:100%;
+		border:0;
+		outline: none;
+		@include border-radius(10px);
+		@include boxSizing(20px);
+	}
+}
+
+textarea{
+
+	width:100%;
+	max-width:100%;
+	border:0;
+	margin:0;
+	outline: none;
+	@include border-radius(10px);
+	@include boxSizing(20px);
+}

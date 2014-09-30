@@ -38,9 +38,6 @@
 	}	
 }
 
-
-
-
 @mixin centre($axis: "both"){
 	position:absolute;
 	@if $axis == "y"{
