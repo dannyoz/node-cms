@@ -1,36 +1,5 @@
-$col-count    : 12;
-$gutter-width : 2%;
-$stack-point  : 550px;
 
 
-@mixin grid-col($ammount:3){
-
-	$gutter-total : ($col-count - 1) * $gutter-width;
-	$remainder  : 100% - $gutter-total;
-	$fill : ($ammount - 1)*$gutter-width;
-	$unit : $remainder / $col-count;
-
-	float:left;
-	width:$unit*$ammount+$fill;
-	margin-right:$gutter-width;
-
-}
-
-@mixin shift($dir:"push",$ammount:3){
-
-	$gutter-total : ($col-count - 1) * $gutter-width;
-	$remainder  : 100% - $gutter-total;
-	$fill : ($ammount - 1)*$gutter-width;
-	$unit : $remainder / $col-count;
-
-	@if $dir == "push" {
-		margin-left:$unit*$ammount+$fill+$gutter-width; 
-	}
-
-	@if $dir == "pull" {
-		margin-right:$unit*$ammount+$fill+$gutter-width; 
-	}
-}
 
 .grid-example{
 
@@ -45,50 +14,7 @@ $stack-point  : 550px;
 	}
 }
 
-.grid-row {
 
-	@include stack;
-}
+@include grid(12,2%,700px);
 
-@for $i from 1 through $col-count{
 
-	.push-#{$i}{
-		@include shift("push",$i)
-	}
-
-	.pull-#{$i}{
-		@include shift("pull",$i)
-	}
-
-	.grid-#{$i}{
-		@include grid-col($i)
-	}
-}
-
-.grid-1,
-.grid-2,
-.grid-3,
-.grid-4,
-.grid-5,
-.grid-6,
-.grid-7,
-.grid-8,
-.grid-9,
-.grid-10,
-.grid-11,
-.grid-12{
-
-	position:relative;
-
-	&:last-child{
-
-		margin-right:0;
-	}
-
-	@media screen and (max-width:$stack-point){
-
-		margin-left: 0;
-		margin-right: 0;
-		@include stack;
-	}
-}

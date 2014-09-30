@@ -1,0 +1,36 @@
+@mixin theme-colour($primary:red,$secondary:undefined,$tertiary:undefined){
+	color:$primary;
+}
+
+@mixin theme($name, $color) {
+
+ 	$darken  : darken($color,5%);
+ 	$lighten : lighten($color,5%);
+ 
+	.#{$name} {
+
+	    &.font {
+	      	color: $color;
+	    }
+
+	    &.font-dark{
+      		color: $darken;
+      	}
+
+      	&.font-light{
+      		color: $lighten;
+      	}
+	 
+	    &.bg {
+	      	background-color: $color;
+	    }
+
+	    &.bg-dark{
+      		background-color: $darken;
+      	}
+
+      	&.bg-light{
+      		background-color: $lighten;
+      	}
+	}
+}

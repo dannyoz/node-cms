@@ -146,8 +146,8 @@ blockquote {
 
 body {
   background: #f6f6f6;
-  color: #222222;
   font-family: "Open Sans", sans-serif;
+  color: #222222;
 }
 
 section {
@@ -163,6 +163,44 @@ hr {
   border-bottom: 1px dashed #e6e6e6;
   display: block;
   margin: 20px 0;
+}
+
+.theme-dark.font {
+  color: #222222;
+}
+.theme-dark.font-dark {
+  color: #151515;
+}
+.theme-dark.font-light {
+  color: #2f2f2f;
+}
+.theme-dark.bg {
+  background-color: #222222;
+}
+.theme-dark.bg-dark {
+  background-color: #151515;
+}
+.theme-dark.bg-light {
+  background-color: #2f2f2f;
+}
+
+.theme-blue.font {
+  color: blue;
+}
+.theme-blue.font-dark {
+  color: #0000e6;
+}
+.theme-blue.font-light {
+  color: #1a1aff;
+}
+.theme-blue.bg {
+  background-color: blue;
+}
+.theme-blue.bg-dark {
+  background-color: #0000e6;
+}
+.theme-blue.bg-light {
+  background-color: #1a1aff;
 }
 
 .container {
@@ -313,6 +351,10 @@ a {
   margin-right: 2%;
 }
 
+.grid-1:last-child {
+  margin-right: 0;
+}
+
 .push-2 {
   margin-left: 17%;
 }
@@ -325,6 +367,10 @@ a {
   float: left;
   width: 15%;
   margin-right: 2%;
+}
+
+.grid-2:last-child {
+  margin-right: 0;
 }
 
 .push-3 {
@@ -341,6 +387,10 @@ a {
   margin-right: 2%;
 }
 
+.grid-3:last-child {
+  margin-right: 0;
+}
+
 .push-4 {
   margin-left: 34%;
 }
@@ -353,6 +403,10 @@ a {
   float: left;
   width: 32%;
   margin-right: 2%;
+}
+
+.grid-4:last-child {
+  margin-right: 0;
 }
 
 .push-5 {
@@ -369,6 +423,10 @@ a {
   margin-right: 2%;
 }
 
+.grid-5:last-child {
+  margin-right: 0;
+}
+
 .push-6 {
   margin-left: 51%;
 }
@@ -381,6 +439,10 @@ a {
   float: left;
   width: 49%;
   margin-right: 2%;
+}
+
+.grid-6:last-child {
+  margin-right: 0;
 }
 
 .push-7 {
@@ -397,6 +459,10 @@ a {
   margin-right: 2%;
 }
 
+.grid-7:last-child {
+  margin-right: 0;
+}
+
 .push-8 {
   margin-left: 68%;
 }
@@ -409,6 +475,10 @@ a {
   float: left;
   width: 66%;
   margin-right: 2%;
+}
+
+.grid-8:last-child {
+  margin-right: 0;
 }
 
 .push-9 {
@@ -425,6 +495,10 @@ a {
   margin-right: 2%;
 }
 
+.grid-9:last-child {
+  margin-right: 0;
+}
+
 .push-10 {
   margin-left: 85%;
 }
@@ -437,6 +511,10 @@ a {
   float: left;
   width: 83%;
   margin-right: 2%;
+}
+
+.grid-10:last-child {
+  margin-right: 0;
 }
 
 .push-11 {
@@ -453,6 +531,10 @@ a {
   margin-right: 2%;
 }
 
+.grid-11:last-child {
+  margin-right: 0;
+}
+
 .push-12 {
   margin-left: 102%;
 }
@@ -467,55 +549,83 @@ a {
   margin-right: 2%;
 }
 
-.grid-1,
-.grid-2,
-.grid-3,
-.grid-4,
-.grid-5,
-.grid-6,
-.grid-7,
-.grid-8,
-.grid-9,
-.grid-10,
-.grid-11,
-.grid-12 {
-  position: relative;
-}
-.grid-1:last-child,
-.grid-2:last-child,
-.grid-3:last-child,
-.grid-4:last-child,
-.grid-5:last-child,
-.grid-6:last-child,
-.grid-7:last-child,
-.grid-8:last-child,
-.grid-9:last-child,
-.grid-10:last-child,
-.grid-11:last-child,
 .grid-12:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 550px) {
-  .grid-1,
-  .grid-2,
-  .grid-3,
-  .grid-4,
-  .grid-5,
-  .grid-6,
-  .grid-7,
-  .grid-8,
-  .grid-9,
-  .grid-10,
-  .grid-11,
+
+@media screen and (max-width: 700px) {
+  .grid-1 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .grid-2 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .grid-3 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .grid-4 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .grid-5 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .grid-6 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .grid-7 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .grid-8 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .grid-9 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .grid-10 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .grid-11 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
   .grid-12 {
     margin-left: 0;
     margin-right: 0;
-    float: left;
     width: 100%;
-    clear: both;
   }
 }
-
 fieldset {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -589,34 +699,31 @@ EXAMPLES OF DEFINING KEYFRAMES USING MIXINS -----
 		}
 
 */
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes $animationName {
   0% {
     -webkit-transform: scale(0.8);
     opacity: 0;
   }
-
   100% {
     -webkit-transform: scale(1);
     opacity: 1;
   }
 }
-@-moz-keyframes fadeIn {
+@-moz-keyframes $animationName {
   0% {
     -moz-transform: scale(0.8);
     opacity: 0;
   }
-
   100% {
     -moz-transform: scale(1);
     opacity: 1;
   }
 }
-@keyframes fadeIn {
+@keyframes $animationName {
   0% {
     transform: scale(0.8);
     opacity: 0;
   }
-
   100% {
     transform: scale(1);
     opacity: 1;

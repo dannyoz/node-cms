@@ -3,8 +3,8 @@ $containerWidth:1000px;
 body{
 
 	background:$body-bg;
-	color:$col-dark;
 	font-family:$font1;
+	@include theme-colour($col-dark);
 
 }
 
@@ -22,6 +22,15 @@ hr{
 	border-bottom:1px dashed $body-bg-subtle;
 	display: block;
 	margin:20px 0;
+}
+
+$themes: (
+    theme-dark: $col-dark,
+    theme-blue: blue,
+) !default;
+
+@each $theme, $color in $themes {
+  	@include theme($theme, $color);
 }
 
 //4. Global classes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

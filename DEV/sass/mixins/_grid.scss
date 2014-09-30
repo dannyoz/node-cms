@@ -1,0 +1,71 @@
+// -----------------------------------------
+// Grid mixins
+// -----------------------------------------
+
+@mixin grid-col($ammount:3,$col-count:12,$gutter-width:2%){
+
+	$gutter-total : ($col-count - 1) * $gutter-width;
+	$remainder  : 100% - $gutter-total;
+	$fill : ($ammount - 1)*$gutter-width;
+	$unit : $remainder / $col-count;
+
+	float:left;
+	width:$unit*$ammount+$fill;
+	margin-right:$gutter-width;
+}
+
+@mixin shift($dir:"push",$ammount:3,$col-count:12,$gutter-width:2%){
+
+	$gutter-total : ($col-count - 1) * $gutter-width;
+	$remainder  : 100% - $gutter-total;
+	$fill : ($ammount - 1)*$gutter-width;
+	$unit : $remainder / $col-count;
+
+	@if $dir == "push" {
+		margin-left:$unit*$ammount+$fill+$gutter-width; 
+	}
+
+	@if $dir == "pull" {
+		margin-right:$unit*$ammount+$fill+$gutter-width; 
+	}
+}
+
+@mixin grid ($col-count:12,$gutter-width:2%,$stack-point:550px){
+
+	.grid-row {
+
+		@include stack;
+	}
+
+	@for $i from 1 through $col-count{
+
+		.push-#{$i}{
+			@include shift("push",$i,$col-count,$gutter-width)
+		}
+
+		.pull-#{$i}{
+			@include shift("pull",$i,$col-count,$gutter-width)
+		}
+
+		.grid-#{$i}{
+			@include grid-col($i,$col-count,$gutter-width)
+		}
+
+		.grid-#{$i}:last-child{
+			margin-right:0;
+		}
+
+	}
+
+	@media screen and (max-width:$stack-point){
+
+		@for $i from 1 through $col-count{
+
+			.grid-#{$i}{
+				margin-left: 0;
+				margin-right: 0;
+				width: 100%;
+			}
+		}
+	}
+}
