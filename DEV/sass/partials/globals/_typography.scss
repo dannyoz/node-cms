@@ -38,23 +38,81 @@ h1,h2,h3,h4,h5,h6{
 
     font-family:$font2;
     text-align: left;
-    margin-bottom:20px;
+    margin-bottom: 0.4em;
 }
 
 h1{
 
     text-transform:uppercase;
     font:{
-        size:30px;
+        size:2.8em;
+        weight:100;
+    }
+}
+
+h2{
+
+    text-transform:uppercase;
+    letter-spacing: 0.2em;
+    font:{
+        size:1.4em;
         weight:700;
     }
 }
 
+h3{
+
+    text-transform:uppercase;
+    font:{
+        size:1.4em;
+        weight:700;
+    }   
+}
+
+h4{
+
+    font:{
+        size:1.4em;
+        weight:300;
+    }   
+}
+
+h5{
+
+    font:{
+        size:1.2em;
+        weight:300;
+    }   
+}
+
+h6{
+
+    font:{
+        size:1em;
+        weight:700;
+    }   
+}
+
+
 p{
 
-    line-height: 20px;
+    margin-bottom: 1em;
+    line-height: 1.5em;
     font:{
         family:$font1;
-        size: 14px;
+        size: 0.9em;
     }
+}
+
+blockquote{
+
+    font-style:italic;
+    margin-bottom: 1em;
+    line-height: 1.5em;
+    background:darken($body-bg,2%);
+    font:{
+        family:$font1;
+        size: 1em;
+    }
+    @include boxSizing(20px);
 }

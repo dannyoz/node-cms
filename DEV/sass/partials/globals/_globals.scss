@@ -2,7 +2,7 @@ $containerWidth:1000px;
 
 body{
 
-	background:$col-light;
+	background:$body-bg;
 	color:$col-dark;
 	font-family:$font1;
 
@@ -11,8 +11,16 @@ body{
 section{
 
 	@include stack;
-	@include boxSizing(40px 20px);
-	@include bevelDivider($col-light,"bottom");
+}
+
+hr{
+	
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:1px dashed $body-bg-subtle;
+	display: block;
+	margin:20px 0;
 }
 
 //4. Global classes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -22,6 +30,12 @@ section{
 
 	margin:0 auto;
 	max-width:$containerWidth;
+}
+
+.bevelStack{
+
+	@include boxSizing(20px);
+	@include bevelDivider($body-bg,"bottom");
 }
 
 .stack{

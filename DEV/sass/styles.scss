@@ -1,27 +1,27 @@
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-// SASS framework by D Osborne  //
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Import all the sass partials for compilation
 
+@import
 // Import the standard reset styles via compass and adding CSS3 support
-@import "compass/reset";
-@import "compass/css3";
+	"compass/reset",
+	"compass/css3",
 
 // Import variables
-@import "variables/colours"; 
+	"variables/colours",
+	"variables/theme-settings",
 
 // Import mixins
-@import "mixins/animations";
-@import "mixins/helpers";
-@import "mixins/layout";
-@import "mixins/typography";
+	"mixins/animations",
+	"mixins/helpers",
+	"mixins/layout",
+	"mixins/typography",
 
 // Import global partials
-@import "partials/globals/typography";
-@import "partials/globals/globals";
-@import "partials/globals/links";
+	"partials/globals/typography",
+	"partials/globals/globals",
+	"partials/globals/links",
 
 // Import layout partials
-@import "partials/layout/main";
+	"partials/layout/main",
 
 // Import module partials
-@import "partials/modules/animations";
+	"partials/modules/animations";
