@@ -1,20 +1,51 @@
-
+// -----------------------------------------
+// Core common mixins
+// -----------------------------------------
 
 @mixin core($config){
 
 	$stack       : map-get($config,stack);
+	$container   : map-get($config,container);
+	$rounded     : map-get($config,rounded);
 	$border-box  : map-get($config,borderBox);
-	$form-bbox   : map-get($config,form-bbox);
+	$form-bbox   : map-get($config,formBox);
 	$transitions : map-get($config,transitions);
 	$fitParent   : map-get($config,fitParent);
 	$centre      : map-get($config,centre);
 	$fadeIn      : map-get($config,fadeIn);
+
+	/* =========================================*/
+	/* CORE GLOBALS                             */
+	/* =========================================*/
+
+	@if $container {
+
+		.container{
+
+			margin:0 auto;
+			max-width:$container;
+		}
+	}
 
 	@if $stack {
 
 		.stack{
 			@include stack;
 		}
+	}
+
+	@if $rounded{
+
+		@for $i from 1 through length($rounded) {
+			
+			$ammount : nth($rounded,$i);
+
+			.rounded-#{$ammount}{
+				@include border-radius($ammount);
+			}
+
+		}
+
 	}
 
 	@if $border-box {
@@ -40,12 +71,14 @@
 
 	@if $transitions{
 
-		.animated{
-			@include single-transition(all,1s,ease)
-		}
+		@for $i from 1 through length($transitions) {
+			
+			$transition : nth($transitions,$i);
 
-		.animatedQuick{
-			@include single-transition(all,0.3s,ease)
+			.transition-#{$i}{
+				@include single-transition(all,$transition,ease)
+			}
+
 		}
 	}
 
@@ -77,5 +110,7 @@
 			@include animation(fadeIn,ease,0.5s,5,0.2s)
 		}
 	}
+
+	/* =========================================*/
 }
 

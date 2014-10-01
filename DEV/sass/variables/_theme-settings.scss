@@ -20,8 +20,9 @@ $theme-config: (
     darken  : 10,
     lighten : 10,
     fonts   : (
-		"primary-font" : $font1,
-		"secondary-font" : $font2
+		"primary-font"   : $font1,
+		"secondary-font" : $font2,
+		"tertiary-font"  : Arial
     	)
 
 ) !default;

@@ -12,6 +12,7 @@
 // Import mixins
 	"mixins/animations",
 	"mixins/grid",
+	"mixins/font-face",
 	"mixins/helpers",
 	"mixins/layout",
 	"mixins/theme",
@@ -19,8 +20,8 @@
 	"mixins/core",
 
 // Import global partials
+	"partials/globals/core",
 	"partials/globals/typography",
-	"partials/globals/globals",
 	"partials/globals/links",
 
 // Import layout partials
