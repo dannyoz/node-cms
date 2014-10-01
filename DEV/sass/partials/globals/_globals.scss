@@ -1,39 +1,20 @@
+
+//See variables/_theme_settings for config vars
+@include theme($theme-config);
+
 $containerWidth:1000px;
 
-body{
+$core-config : (
+	stack       : true,
+	borderBox   : false,
+	form-bbox   : true,
+	transitions : true,
+	fitParent   : true,
+	centre      : true,
+	fadeIn      : false
+);
 
-	background:$body-bg;
-	font-family:$font1;
-	@include theme-colour($col-dark);
-
-}
-
-
-section{
-
-	@include stack;
-}
-
-hr{
-	
-	border-top:none;
-	border-left:none;
-	border-right:none;
-	border-bottom:1px dashed $body-bg-subtle;
-	display: block;
-	margin:20px 0;
-}
-
-$themes: (
-    theme-dark: $col-dark,
-    theme-blue: blue,
-) !default;
-
-@each $theme, $color in $themes {
-  	@include theme($theme, $color);
-}
-
-//4. Global classes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@include core($core-config);
 
 
 .container{
@@ -48,37 +29,13 @@ $themes: (
 	@include bevelDivider($body-bg,"bottom");
 }
 
-.stack{
-	@include stack;
-}
 
-.animated{
-	@include single-transition(all,1s,ease)
-}
 
-.animatedQuick{
-	@include single-transition(all,0.3s,ease)
-}
 
-.fitParent{
-	@include fitParent;
-}
 
-.centre{
-	@include centre;
-}
 
-.centreX{
-	@include centre(x);
-}
 
-.centreY{
-	@include centre(y);
-}
 
-.fadeIn{
-	@include animation(fadeIn,ease,0.5s,5,0.2s)
-}
 
 
 

@@ -1,0 +1,81 @@
+
+
+@mixin core($config){
+
+	$stack       : map-get($config,stack);
+	$border-box  : map-get($config,borderBox);
+	$form-bbox   : map-get($config,form-bbox);
+	$transitions : map-get($config,transitions);
+	$fitParent   : map-get($config,fitParent);
+	$centre      : map-get($config,centre);
+	$fadeIn      : map-get($config,fadeIn);
+
+	@if $stack {
+
+		.stack{
+			@include stack;
+		}
+	}
+
+	@if $border-box {
+
+		*{
+			@include box-sizing(border-box);
+		}
+	}
+
+	@if $form-bbox {
+		
+		fieldset,
+		textarea,
+		input[type="text"],
+		input[type="email"], 
+		input[type="password"], 
+		input[type="url"], 
+		input[type="tel"], 
+		input[type="search"]{
+			@include box-sizing(border-box);
+		}
+	}
+
+	@if $transitions{
+
+		.animated{
+			@include single-transition(all,1s,ease)
+		}
+
+		.animatedQuick{
+			@include single-transition(all,0.3s,ease)
+		}
+	}
+
+	@if $fitParent{
+
+		.fitParent{
+			@include fitParent;
+		}
+	}
+
+	@if $centre{
+
+		.centre{
+			@include centre;
+		}
+
+		.centre-x{
+			@include centre(x);
+		}
+
+		.centre-y{
+			@include centre(y);
+		}
+	}
+
+	@if $fadeIn{
+
+		.fadeIn{
+			@include animation(fadeIn,ease,0.5s,5,0.2s)
+		}
+	}
+}
+

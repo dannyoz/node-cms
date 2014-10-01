@@ -1,36 +1,123 @@
-@mixin theme-colour($primary:red,$secondary:undefined,$tertiary:undefined){
-	color:$primary;
+// -----------------------------------------
+// Theme mixins
+// -----------------------------------------
+
+@mixin colours($name, $colour,$darken,$lighten){
+
+	.text-#{$name} {
+
+		color:$colour;
+
+		@if $darken {
+
+			@for $i from 1 through length($darken) {
+
+				$shade : nth($darken,$i);
+
+				&.darken-#{$shade}{
+					color: darken($colour,$shade);
+				}
+			}
+		}
+
+		@if $lighten {
+			
+			@for $i from 1 through length($lighten) {
+
+				$shade : nth($lighten,$i);
+
+				&.lighten-#{$shade}{
+					color: lighten($colour,$shade);
+				}
+			}
+		}
+	}
+
+	.bg-#{$name} {
+
+		background-color:$colour;
+
+		@if $darken {
+
+			@for $i from 1 through length($darken) {
+
+				$shade : nth($darken,$i);
+
+				&.darken-#{$shade}{
+					background-color: darken($colour,$shade);
+				}
+			}
+		}
+
+		@if $lighten {
+			
+			@for $i from 1 through length($lighten) {
+
+				$shade : nth($lighten,$i);
+
+				&.lighten-#{$shade}{
+					background-color: lighten($colour,$shade);
+				}
+			}
+		}
+	}
 }
 
-@mixin theme($name, $color) {
-
- 	$darken  : darken($color,5%);
- 	$lighten : lighten($color,5%);
- 
+@mixin fonts($name,$font){
 	.#{$name} {
-
-	    &.font {
-	      	color: $color;
-	    }
-
-	    &.font-dark{
-      		color: $darken;
-      	}
-
-      	&.font-light{
-      		color: $lighten;
-      	}
-	 
-	    &.bg {
-	      	background-color: $color;
-	    }
-
-	    &.bg-dark{
-      		background-color: $darken;
-      	}
-
-      	&.bg-light{
-      		background-color: $lighten;
-      	}
+		font-family:$font;
 	}
+}
+
+
+@mixin theme($config){
+
+	/* =========================================*/
+	/* THEME STYLES                             */
+	/* =========================================*/
+
+	$style   : map-get($config,style);
+	$colours : map-get($config,colours);
+	$darken  : map-get($config,darken);
+	$lighten : map-get($config,lighten);
+	$fonts   : map-get($config,fonts);
+
+	@if $style {
+
+		@if $style == "dark" {
+
+			body{
+
+				background:$col-dark;
+				font-family:$font1;
+				color:$col-light;
+			}
+		}
+
+		@if $style == "light" {
+
+			body{
+				
+				background:$col-light;
+				font-family:$font1;
+				color:$col-dark;
+			}
+		}
+	} @else {
+
+		body{
+				
+			font-family:$font1;
+		}
+	}	
+
+	@each $name, $colour in $colours {
+	  	@include colours($name, $colour,$darken,$lighten);
+	}
+
+	@each $name, $font in $fonts {
+	  	@include fonts($name, $font);
+	}
+
+	/* =========================================*/
 }

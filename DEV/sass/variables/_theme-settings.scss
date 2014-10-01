@@ -2,4 +2,26 @@
 
 //Colours
 $body-bg : lighten($col-light,3%); //Body background colour
-$body-bg-subtle : darken($body-bg,6%) //Body subtley changed
+$body-bg-subtle : darken($body-bg,6%); //Body subtley changed
+
+
+$font1 : "Open Sans", sans-serif;
+$font2 : "Open Sans Condensed", sans-serif;
+
+// See mixins/_theme.scss for implementation
+$theme-config: (
+
+	style   : light,
+    colours : (
+		"primary-colour"   : $col-blue,
+		"secondary-colour" : $col-green,
+		"tertiary-colour"  : $col-orange
+    	),
+    darken  : 10,
+    lighten : 10,
+    fonts   : (
+		"primary-font" : $font1,
+		"secondary-font" : $font2
+    	)
+
+) !default;

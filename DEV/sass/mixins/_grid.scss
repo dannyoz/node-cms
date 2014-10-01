@@ -32,6 +32,10 @@
 
 @mixin grid ($col-count:12,$gutter-width:2%,$stack-point:550px){
 
+	/* =========================================*/
+	/* GRID STYLES                              */
+	/* =========================================*/
+
 	.grid-row {
 
 		@include stack;
@@ -51,21 +55,32 @@
 			@include grid-col($i,$col-count,$gutter-width)
 		}
 
-		.grid-#{$i}:last-child{
-			margin-right:0;
-		}
+		// .grid-#{$i}:last-child{
+		// 	margin-right:0;
+		// }
 
+	}
+
+	[class*="grid"]:last-child{
+		margin-right:0;
 	}
 
 	@media screen and (max-width:$stack-point){
 
-		@for $i from 1 through $col-count{
+		// @for $i from 1 through $col-count{
 
-			.grid-#{$i}{
-				margin-left: 0;
-				margin-right: 0;
-				width: 100%;
-			}
+		// 	.grid-#{$i}{
+		// 		margin-left: 0;
+		// 		margin-right: 0;
+		// 		width: 100%;
+		// 	}
+		// }
+		[class*="grid"]{
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
 		}
 	}
+
+	/* =========================================*/
 }
