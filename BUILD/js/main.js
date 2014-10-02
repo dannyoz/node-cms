@@ -22546,13 +22546,11 @@ var app = angular.module('app', ['ngRoute'])
      	$routeProvider
 
 	        .when('/', {
-	        	templateUrl: '/views/home.html',
-	        	controller: 'main'
+	        	templateUrl: '/views/home.html'
 	        })
 
 	        .when('/styleguide', {
-	        	templateUrl: '/views/styleguide/base.html',
-	        	controller: 'main'
+	        	templateUrl: '/views/styleguide/base.html'
 	    	})
 	        
 
@@ -22561,19 +22559,19 @@ var app = angular.module('app', ['ngRoute'])
 
 
 
-.factory('webApp', function() {
+.factory('global', function() {
 
     return {
     	isLoading : true
     }
 })
-.controller('main', ['$scope', '$http', 'webApp', function ($scope, $http, webApp) {
+.controller('body', ['$scope', '$http', 'global', function ($scope, $http, global) {
 
 	// Check to see if feed has loaded
     $scope.$watch(function(){
-        $scope.isLoading = webApp.isLoading
+        $scope.isLoading = global.isLoading
     })
 
-    console.log('LIVE RELOAD ADDED!!!')
+    $scope.theme = "light"
 
 }])

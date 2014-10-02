@@ -1,6 +1,7 @@
 $theme-config: (
 
-	style   : light,
+	themeName  : "light",
+	themeStyle : light,
     colours : (
 		"primary-colour"   : $col-blue,
 		"secondary-colour" : $col-green,
@@ -18,3 +19,4 @@ $theme-config: (
 
 
 @include theme($theme-config);
+

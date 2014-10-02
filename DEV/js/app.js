@@ -4,13 +4,11 @@ var app = angular.module('app', ['ngRoute'])
      	$routeProvider
 
 	        .when('/', {
-	        	templateUrl: '/views/home.html',
-	        	controller: 'main'
+	        	templateUrl: '/views/home.html'
 	        })
 
 	        .when('/styleguide', {
-	        	templateUrl: '/views/styleguide/base.html',
-	        	controller: 'main'
+	        	templateUrl: '/views/styleguide/base.html'
 	    	})
 	        
 

@@ -404,82 +404,64 @@ textarea {
 /* =========================================*/
 /* THEME STYLES                             */
 /* =========================================*/
-body {
+body.light {
   background: #f6f6f6;
-  font-family: "Open Sans", sans-serif;
   color: #222222;
 }
 
-.text-primary-colour, h1, h3, h4 {
+.light .text-primary-colour, .light h1, .light h3, .light h4 {
   color: #125c8f;
 }
-.text-primary-colour.darken-10, h1.darken-10, h3.darken-10, h4.darken-10 {
+.light .text-primary-colour.darken-10, .light h1.darken-10, .light h3.darken-10, .light h4.darken-10 {
   color: #0c3f62;
 }
-.text-primary-colour.lighten-10, h1.lighten-10, h3.lighten-10, h4.lighten-10 {
+.light .text-primary-colour.lighten-10, .light h1.lighten-10, .light h3.lighten-10, .light h4.lighten-10 {
   color: #1879bc;
 }
-
-.bg-primary-colour {
+.light .bg-primary-colour {
   background-color: #125c8f;
 }
-.bg-primary-colour.darken-10 {
+.light .bg-primary-colour.darken-10 {
   background-color: #0c3f62;
 }
-.bg-primary-colour.lighten-10 {
+.light .bg-primary-colour.lighten-10 {
   background-color: #1879bc;
 }
-
-.text-secondary-colour, h2 {
+.light .text-secondary-colour, .light h2 {
   color: #4f903e;
 }
-.text-secondary-colour.darken-10, h2.darken-10 {
+.light .text-secondary-colour.darken-10, .light h2.darken-10 {
   color: #3b6c2f;
 }
-.text-secondary-colour.lighten-10, h2.lighten-10 {
+.light .text-secondary-colour.lighten-10, .light h2.lighten-10 {
   color: #63b34e;
 }
-
-.bg-secondary-colour {
+.light .bg-secondary-colour {
   background-color: #4f903e;
 }
-.bg-secondary-colour.darken-10 {
+.light .bg-secondary-colour.darken-10 {
   background-color: #3b6c2f;
 }
-.bg-secondary-colour.lighten-10 {
+.light .bg-secondary-colour.lighten-10 {
   background-color: #63b34e;
 }
-
-.text-tertiary-colour {
+.light .text-tertiary-colour {
   color: #eb9f18;
 }
-.text-tertiary-colour.darken-10 {
+.light .text-tertiary-colour.darken-10 {
   color: #bf8011;
 }
-.text-tertiary-colour.lighten-10 {
+.light .text-tertiary-colour.lighten-10 {
   color: #efb347;
 }
-
-.bg-tertiary-colour {
+.light .bg-tertiary-colour {
   background-color: #eb9f18;
 }
-.bg-tertiary-colour.darken-10 {
+.light .bg-tertiary-colour.darken-10 {
   background-color: #bf8011;
 }
-.bg-tertiary-colour.lighten-10 {
+.light .bg-tertiary-colour.lighten-10 {
   background-color: #efb347;
-}
-
-.primary-font {
-  font-family: "Open Sans", sans-serif;
-}
-
-.secondary-font {
-  font-family: "Open Sans Condensed", sans-serif;
-}
-
-.tertiary-font {
-  font-family: Arial;
 }
 
 /* =========================================*/
@@ -501,7 +483,7 @@ body {
   font-weight: 800;
   src: local("Open Sans Extrabold"), local("OpenSans-Extrabold"), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff) format("woff");
 }
-.open-sans, p, blockquote {
+body, .open-sans, p, blockquote {
   font-family: "Open Sans", sans-serif;
 }
 

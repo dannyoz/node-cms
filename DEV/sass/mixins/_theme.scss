@@ -76,47 +76,51 @@
 	/* THEME STYLES                             */
 	/* =========================================*/
 
-	$style   : map-get($config,style);
+	$name    : map-get($config,themeName);
+	$style   : map-get($config,themeStyle);
 	$colours : map-get($config,colours);
 	$darken  : map-get($config,darken);
 	$lighten : map-get($config,lighten);
 	$fonts   : map-get($config,fonts);
 
+
 	@if $style {
 
 		@if $style == "dark" {
 
-			body{
+			body.#{$name}{
 
 				background:$col-dark;
-				font-family:$font1;
 				color:$col-light;
 			}
 		}
 
 		@if $style == "light" {
 
-			body{
+			body.#{$name}{
 				
 				background:$col-light;
-				font-family:$font1;
 				color:$col-dark;
 			}
 		}
 	} @else {
 
-		body{
+		body.#{$name}{
 				
 			font-family:$font1;
 		}
-	}	
-
-	@each $name, $colour in $colours {
-	  	@include colours($name, $colour,$darken,$lighten);
 	}
 
-	@each $name, $font in $fonts {
-	  	@include fonts($name, $font);
+	.#{$name}{	
+
+		@each $name, $colour in $colours {
+		  	@include colours($name, $colour,$darken,$lighten);
+		}
+
+		// @each $name, $font in $fonts {
+		//   	@include fonts($name, $font);
+		// }
+
 	}
 
 	/* =========================================*/

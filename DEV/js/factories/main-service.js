@@ -1,4 +1,4 @@
-.factory('webApp', function() {
+.factory('global', function() {
 
     return {
     	isLoading : true
