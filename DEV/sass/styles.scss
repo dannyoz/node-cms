@@ -5,6 +5,8 @@
 	"compass/reset",
 	"compass/css3",
 
+// =====================================================	
+
 // Import variables
 	"variables/colours",
 	"variables/theme-settings",
@@ -19,14 +21,19 @@
 	"mixins/typography",
 	"mixins/core",
 
+// =====================================================
+
 // Import global partials
 	"partials/globals/core",
-	"partials/globals/typography",
 	"partials/globals/links",
 
 // Import layout partials
-	"partials/layout/grid",
 	"partials/layout/forms",
+
+// =====================================================
+// Import Theme specific partials
+	"partials/theme/light",
+	"partials/theme/typography",	
 
 // Import module partials
 	"partials/modules/animations";

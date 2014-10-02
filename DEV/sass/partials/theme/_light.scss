@@ -1,0 +1,20 @@
+$theme-config: (
+
+	style   : light,
+    colours : (
+		"primary-colour"   : $col-blue,
+		"secondary-colour" : $col-green,
+		"tertiary-colour"  : $col-orange
+    	),
+    darken  : 10,
+    lighten : 10,
+    fonts   : (
+		"primary-font"   : $font1,
+		"secondary-font" : $font2,
+		"tertiary-font"  : Arial
+    	)
+
+) !default;
+
+
+@include theme($theme-config);

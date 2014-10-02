@@ -1,10 +1,7 @@
 
-//See variables/_theme_settings for config vars
-@include theme($theme-config);
-
 
 // ===============================================================
-// Core styles config - see mixins/_core.scss for implementation
+// CORE STYLES config - see mixins/_core.scss for implementation
 
 	$core-config : (
 
@@ -46,6 +43,7 @@
 
 
 @include grid(12,2%,700px);
+
 
 
 

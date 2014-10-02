@@ -1,13 +1,12 @@
 
 @include open-sans;
-
-@include open-sans-condensed;
+@include roboto-slab;
 
 h1,h2,h3,h4,h5,h6{
 
-    font-family:$font2;
     text-align: left;
     margin-bottom: 0.4em;
+    @extend .roboto-slab;
 }
 
 h1{
@@ -17,6 +16,7 @@ h1{
         size:2.8em;
         weight:100;
     }
+    @extend .text-primary-colour;
 }
 
 h2{
@@ -27,6 +27,7 @@ h2{
         size:1.4em;
         weight:700;
     }
+    @extend .text-secondary-colour;
 }
 
 h3{
@@ -35,7 +36,8 @@ h3{
     font:{
         size:1.4em;
         weight:700;
-    }   
+    }
+    @extend .text-primary-colour;   
 }
 
 h4{
@@ -43,7 +45,8 @@ h4{
     font:{
         size:1.4em;
         weight:300;
-    }   
+    }
+    @extend .text-primary-colour;   
 }
 
 h5{
@@ -68,9 +71,9 @@ p{
     margin-bottom: 1em;
     line-height: 1.5em;
     font:{
-        family:$font1;
         size: 0.9em;
     }
+    @extend .open-sans;
 }
 
 blockquote{
@@ -80,8 +83,8 @@ blockquote{
     line-height: 1.5em;
     background:darken($body-bg,2%);
     font:{
-        family:$font1;
         size: 1em;
     }
+    @extend .open-sans;
     @include boxSizing(20px);
 }
