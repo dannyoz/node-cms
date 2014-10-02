@@ -63,12 +63,6 @@
 	}
 }
 
-@mixin fonts($name,$font){
-	.#{$name} {
-		font-family:$font;
-	}
-}
-
 
 @mixin theme($config){
 
@@ -76,19 +70,17 @@
 	/* THEME STYLES                             */
 	/* =========================================*/
 
-	$name    : map-get($config,themeName);
-	$style   : map-get($config,themeStyle);
-	$colours : map-get($config,colours);
-	$darken  : map-get($config,darken);
-	$lighten : map-get($config,lighten);
-	$fonts   : map-get($config,fonts);
-
+	$themeName : map-get($config,themeName);
+	$style     : map-get($config,themeStyle);
+	$colours   : map-get($config,colours);
+	$darken    : map-get($config,darken);
+	$lighten   : map-get($config,lighten);
 
 	@if $style {
 
 		@if $style == "dark" {
 
-			body.#{$name}{
+			body.#{$themeName}{
 
 				background:$col-dark;
 				color:$col-light;
@@ -97,30 +89,19 @@
 
 		@if $style == "light" {
 
-			body.#{$name}{
+			body.#{$themeName}{
 				
 				background:$col-light;
 				color:$col-dark;
 			}
 		}
-	} @else {
+	} 
 
-		body.#{$name}{
-				
-			font-family:$font1;
-		}
-	}
-
-	.#{$name}{	
+	.#{$themeName}{	
 
 		@each $name, $colour in $colours {
 		  	@include colours($name, $colour,$darken,$lighten);
 		}
-
-		// @each $name, $font in $fonts {
-		//   	@include fonts($name, $font);
-		// }
-
 	}
 
 	/* =========================================*/

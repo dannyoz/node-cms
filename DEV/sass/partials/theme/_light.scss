@@ -5,15 +5,11 @@ $theme-config: (
     colours : (
 		"primary-colour"   : $col-blue,
 		"secondary-colour" : $col-green,
-		"tertiary-colour"  : $col-orange
+		"tertiary-colour"  : $col-orange,
+		"color-4"          : red
     	),
-    darken  : 10,
-    lighten : 10,
-    fonts   : (
-		"primary-font"   : $font1,
-		"secondary-font" : $font2,
-		"tertiary-font"  : Arial
-    	)
+    darken  : 10 20,
+    lighten : 10
 
 ) !default;
 

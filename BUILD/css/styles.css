@@ -80,14 +80,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-radius: 20px;
 }
 
-fieldset,
-textarea,
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="url"],
-input[type="tel"],
-input[type="search"] {
+.border-box {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -415,6 +408,9 @@ body.light {
 .light .text-primary-colour.darken-10, .light h1.darken-10, .light h3.darken-10, .light h4.darken-10 {
   color: #0c3f62;
 }
+.light .text-primary-colour.darken-20, .light h1.darken-20, .light h3.darken-20, .light h4.darken-20 {
+  color: #072234;
+}
 .light .text-primary-colour.lighten-10, .light h1.lighten-10, .light h3.lighten-10, .light h4.lighten-10 {
   color: #1879bc;
 }
@@ -423,6 +419,9 @@ body.light {
 }
 .light .bg-primary-colour.darken-10 {
   background-color: #0c3f62;
+}
+.light .bg-primary-colour.darken-20 {
+  background-color: #072234;
 }
 .light .bg-primary-colour.lighten-10 {
   background-color: #1879bc;
@@ -433,6 +432,9 @@ body.light {
 .light .text-secondary-colour.darken-10, .light h2.darken-10 {
   color: #3b6c2f;
 }
+.light .text-secondary-colour.darken-20, .light h2.darken-20 {
+  color: #28491f;
+}
 .light .text-secondary-colour.lighten-10, .light h2.lighten-10 {
   color: #63b34e;
 }
@@ -441,6 +443,9 @@ body.light {
 }
 .light .bg-secondary-colour.darken-10 {
   background-color: #3b6c2f;
+}
+.light .bg-secondary-colour.darken-20 {
+  background-color: #28491f;
 }
 .light .bg-secondary-colour.lighten-10 {
   background-color: #63b34e;
@@ -451,6 +456,9 @@ body.light {
 .light .text-tertiary-colour.darken-10 {
   color: #bf8011;
 }
+.light .text-tertiary-colour.darken-20 {
+  color: #90610d;
+}
 .light .text-tertiary-colour.lighten-10 {
   color: #efb347;
 }
@@ -460,8 +468,35 @@ body.light {
 .light .bg-tertiary-colour.darken-10 {
   background-color: #bf8011;
 }
+.light .bg-tertiary-colour.darken-20 {
+  background-color: #90610d;
+}
 .light .bg-tertiary-colour.lighten-10 {
   background-color: #efb347;
+}
+.light .text-color-4 {
+  color: red;
+}
+.light .text-color-4.darken-10 {
+  color: #cc0000;
+}
+.light .text-color-4.darken-20 {
+  color: #990000;
+}
+.light .text-color-4.lighten-10 {
+  color: #ff3333;
+}
+.light .bg-color-4 {
+  background-color: red;
+}
+.light .bg-color-4.darken-10 {
+  background-color: #cc0000;
+}
+.light .bg-color-4.darken-20 {
+  background-color: #990000;
+}
+.light .bg-color-4.lighten-10 {
+  background-color: #ff3333;
 }
 
 /* =========================================*/
