@@ -125,7 +125,7 @@ $form-theme-config : (
 		$rounding     : map-get($modern-checks,rounding);
 		$inset        : map-get($modern-checks,insetAmt);
 
-		$dialColour   : red !default;
+		$dialColour   : grey !default;
 		$check-width  : 50px !default;
 		$check-height : 20px !default;
 		$rounding     : 5px !default;
@@ -154,14 +154,14 @@ $form-theme-config : (
 
 				& + span{
 
-					background-color:$dialColour;
-					border:1px solid #444;
+					background-color:#DDD;
+					border:1px solid #AAA;
 					position: absolute;
 					width:$check-height;
 					top:$inset;
 					left:$inset;
 					bottom:$inset;
-					@include border-radius($rounding 0 0 $rounding);
+					@include border-radius(($rounding - $inset) 0 0 ($rounding - $inset));
 					@include single-transition(all,0.25s,ease);
 
 					&:before{
@@ -182,8 +182,10 @@ $form-theme-config : (
 
 				&:checked + span{
 
+					background-color:$dialColour;
+					border:1px solid $dialColour;
 					left: $check-width - $check-height - ($inset + 2px);
-					@include border-radius(0 $rounding $rounding 0);
+					@include border-radius(0 ($rounding - $inset) ($rounding - $inset) 0);
 
 					&:before {
 						
