@@ -1,12 +1,11 @@
 
-@include open-sans(body);
-@include roboto-slab;
+@include open-sans(body p blockquote h4 h5 h6);
+@include open-sans-condensed(h1 h2 h3);
 
 h1,h2,h3,h4,h5,h6{
 
     text-align: left;
     margin-bottom: 0.4em;
-    @extend .roboto-slab;
 }
 
 h1{
@@ -16,7 +15,6 @@ h1{
         size:2.8em;
         weight:100;
     }
-    @extend .text-primary-colour;
 }
 
 h2{
@@ -27,7 +25,6 @@ h2{
         size:1.4em;
         weight:700;
     }
-    @extend .text-secondary-colour;
 }
 
 h3{
@@ -37,7 +34,6 @@ h3{
         size:1.4em;
         weight:700;
     }
-    @extend .text-primary-colour;   
 }
 
 h4{
@@ -46,7 +42,6 @@ h4{
         size:1.4em;
         weight:300;
     }
-    @extend .text-primary-colour;   
 }
 
 h5{
@@ -73,7 +68,7 @@ p{
     font:{
         size: 0.9em;
     }
-    @extend .open-sans;
+    //@extend .open-sans;
 }
 
 blockquote{
@@ -85,6 +80,6 @@ blockquote{
     font:{
         size: 1em;
     }
-    @extend .open-sans;
+    //@extend .open-sans;
     @include boxSizing(20px);
 }

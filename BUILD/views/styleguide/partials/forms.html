@@ -1,7 +1,7 @@
 
 <h1 id="form_elements">Fieldsets, Legends, and Form Elements</h1>
 
-<p>This last section contains elements that don't render well in markdown. Please consult the final section in <a href="https://github.com/bryanbraun/frontend-styleguide/blob/master/styleguide.html">styleguide.html</a>, to see the rest of the styleguide.</p>
+<p>This section contains typical web form elements</p>
 
 <fieldset>
   <legend>Legend</legend>
@@ -19,23 +19,17 @@
 
   </div>
 
-  <div class="grid-8 push-1">
+  <div class="grid-9">
   
-    <fieldset> 
+    <fieldset>
 
-      <label class="grid-3" for="text_field">Text Field:</label>
-      <div class="grid-9">
-        <input type="text" id="text_field" />
-      </div>
+        <input type="text" id="text_field" placeholder="Text Field" />
 
     </fieldset>
     
     <fieldset>
 
-      <label class="grid-3" for="text_area">Text Area:</label>
-      <div class="grid-9">
-        <textarea id="text_area"></textarea>
-      </div>
+        <textarea id="text_area" placeholder="Text Area"></textarea>
 
     </fieldset>
     
@@ -74,9 +68,22 @@
     
       <label class="grid-3" for="checkboxes">Checkboxes:</label>
       <div class="grid-9">
-        <input type="checkbox" class="checkbox" name="checkboxes" value="check_1" /> Radio 1<br/>
-        <input type="checkbox" class="checkbox" name="checkboxes" value="check_2" /> Radio 2<br/>
-        <input type="checkbox" class="checkbox" name="checkboxes" value="check_3" /> Radio 3<br/>
+
+        <div class="modern-check">
+          <input type="checkbox" class="checkbox" name="checkboxes" value="check_1" checked="checked" />
+          <span></span>
+        </div>
+
+        <div class="modern-check">
+          <input type="checkbox" class="checkbox" name="checkboxes" value="check_1"/>
+          <span></span>
+        </div>
+
+        <div class="modern-check">
+          <input type="checkbox" class="checkbox" name="checkboxes" value="check_1"/>
+          <span></span>
+        </div>
+
       </div>
     
     </fieldset>
@@ -104,28 +111,19 @@
 
     <fieldset>
 
-      <label class="grid-3" for="email">Email:</label>
-      <div class="grid-9">
-        <input type="email">
-      </div>  
+        <input type="email" placeholder="e-Mail">
 
     </fieldset>
     
     <fieldset>
 
-      <label class="grid-3" for="url">URL:</label>
-      <div class="grid-9">
-        <input type="url">
-      </div>  
+        <input type="url" placeholder="Url">
 
     </fieldset>
 
     <fieldset>
 
-      <label class="grid-3" for="tel">Telephone:</label>
-      <div class="grid-9">
-        <input type="tel">
-      </div>  
+        <input type="tel" placeholder="Phone Number">
 
     </fieldset>
 
@@ -140,10 +138,7 @@
 
     <fieldset>
 
-      <label class="grid-3" for="search">Search:</label>
-      <div class="grid-9">
-        <input type="search">
-      </div>  
+        <input type="search" placeholder="Search">
     
     </fieldset>
 

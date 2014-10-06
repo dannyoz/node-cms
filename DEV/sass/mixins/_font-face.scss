@@ -7,7 +7,7 @@
 // roboto
 // roboto-slab
 
-@mixin open-sans($body-font:false){
+@mixin open-sans($elements:false){
 
 	@font-face {
     font-family: 'Open Sans';
@@ -28,22 +28,22 @@
 	    src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
 	}
 
-	@if $body-font {
+	.open-sans{
+		font-family: "Open Sans", sans-serif;
+	}
 
-		body, .open-sans{
-			font-family: "Open Sans", sans-serif;
-		}
+	@if $elements {
 
-	} @else {
-
-		.open-sans{
-			font-family: "Open Sans", sans-serif;
+		@each $element in $elements {
+			#{$element}{
+				@extend .open-sans;
+			}
 		}
 	}
 }
 
 
-@mixin open-sans-condensed($body-font:false){
+@mixin open-sans-condensed($elements:false){
 
 	@font-face {
 	    font-family: 'Open Sans Condensed';
@@ -58,22 +58,22 @@
 	    src: local('Open Sans Condensed Bold'), local('OpenSans-CondensedBold'), url(http://themes.googleusercontent.com/static/fonts/opensanscondensed/v7/gk5FxslNkTTHtojXrkp-xONSK5BxN3NFS4EJkViHIqo.woff) format('woff');
 	}
 
-	@if $body-font {
+	.open-sans-condensed{
+		font-family: "Open Sans Condensed", sans-serif;
+	}
 
-		body, .open-sans-condensed{
-			font-family: "Open Sans Condensed", sans-serif;
-		}
+	@if $elements {
 
-	} @else {
-
-		.open-sans-condensed{
-			font-family: "Open Sans Condensed", sans-serif;
+		@each $element in $elements {
+			#{$element}{
+				@extend .open-sans-condensed;
+			}
 		}
 	}
 }
 
 
-@mixin roboto($body-font:false){
+@mixin roboto($elements:false){
 
 	@font-face {
 	  	font-family: 'Roboto';
@@ -94,22 +94,22 @@
 	  	src: local('Roboto Bold'), local('Roboto-Bold'), url(http://themes.googleusercontent.com/static/fonts/roboto/v11/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 	}
 
-	@if $body-font {
+	.roboto{
+		font-family: "Roboto", arial, sans-serif;
+	}
 
-		body, .roboto{
-			font-family: "Roboto", arial, sans-serif;
-		}
+	@if $elements {
 
-	} @else {
-
-		.roboto{
-			font-family: "Roboto", arial, sans-serif;
+		@each $element in $elements {
+			#{$element}{
+				@extend .roboto;
+			}
 		}
 	}
 }
 
 
-@mixin roboto-slab($body-font:false){
+@mixin roboto-slab($elements:false){
 
 	@font-face {
 	  	font-family: 'Roboto Slab';
@@ -130,18 +130,17 @@
 	  	src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'), url(http://themes.googleusercontent.com/static/fonts/robotoslab/v3/dazS1PrQQuCxC3iOAJFEJTqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
 	}
 
-	@if $body-font {
-
-		body, .roboto-slab{
-			font-family: "Roboto Slab", times, serif;
-		}
-
-	} @else {
-
-		.roboto-slab{
-			font-family: "Roboto Slab", times, serif;
-		}
+	.roboto-slab{
+		font-family: "Roboto Slab", times, serif;
 	}
 
+	@if $elements {
+
+		@each $element in $elements {
+			#{$element}{
+				@extend .roboto-slab;
+			}
+		}
+	}
 }
 

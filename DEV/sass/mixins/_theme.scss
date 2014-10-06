@@ -2,7 +2,7 @@
 // Theme mixins
 // -----------------------------------------
 
-@mixin colours($name, $colour,$darken,$lighten){
+@mixin colours($name,$colour,$darken,$lighten){
 
 	.text-#{$name} {
 
