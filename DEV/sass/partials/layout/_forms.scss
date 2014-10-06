@@ -21,23 +21,23 @@ $form-theme-config : (
 		bgCol     : darken(#FFF,2%),
 		btnText   : lighten($col-blue,20%),
 		btnBG     : $col-blue,
-		btnBorder : darken ($col-blue,5px)
+		btnBorder : darken ($col-blue,5%)
 	),
 	hoverCols : (
 		textCol   : #888,
 		borderCol : #aaa,
 		bgCol     : #FFF,
-		btnText   : blue,
-		btnBG     : blue,
-		btnBorder : blue
+		btnText   : lighten($col-blue,25%),
+		btnBG     : darken ($col-blue,5%),
+		btnBorder : darken ($col-blue,10%)
 	),
 	focusCols : (
 		textCol   : $col-blue,
 		borderCol : $col-blue,
 		bgCol     : #FFF,
-		btnText   : blue,
-		btnBG     : blue,
-		btnBorder : blue
+		btnText   : lighten($col-blue,25%),
+		btnBG     : darken ($col-blue,5%),
+		btnBorder : darken ($col-blue,10%)
 	),
 	modern-checks : (
 		dialColour : $col-green,
