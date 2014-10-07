@@ -5,6 +5,6 @@
         $scope.isLoading = global.isLoading
     })
 
-    $scope.theme = "light"
+    $scope.theme = "dark"
 
 }])

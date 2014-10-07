@@ -1,10 +1,30 @@
 //Theme specific vars
+$theme-style : "dark"; // "dark" or "light"
+
+$primary-font : "Open Sans", sans-serif;
+$secondary-font : "Open Sans Condensed", sans-serif;
 
 //Colours
-$body-bg : lighten($col-light,3%); //Body background colour
-$body-bg-subtle : darken($body-bg,6%); //Body subtley changed
+$theme-bg-colour     : #222222;
+$theme-text-colour   : #CCCCCC;
+$theme-primary-col   : #e7a753;
+$theme-secondary-col : #aa4f40;
+$theme-tertiary-col  : #c37a3f;
 
+//Forms
+$form-theme-config : (
 
-$font1 : "Open Sans", sans-serif;
-$font2 : "Open Sans Condensed", sans-serif;
-
+	inputs      : "text" "email" "password" "url" "tel" "search",
+	fontFace    : 0.8em $primary-font,
+	dimensions  : (
+		fmPadding   : 20px,
+		fmRounding  : 10px
+	),
+	modern-checks : (
+		dialColour : grey,
+		mcHeight   : 25px,
+		mcWidth    : 65px,
+		rounding   : 5px,
+		insetAmt   : 2px
+	)
+);

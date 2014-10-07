@@ -11,8 +11,53 @@ $theme-config: (
     darken  : 10,
     lighten : 10
 
-) !default;
+) !default; 
 
 
-@include theme($theme-config);
+//@include theme($theme-config);
 
+
+
+
+@mixin core-theme($theme-style:"light",$base-colour:#eeeeee){
+
+	body.#{$theme-style}{
+
+		color:$theme-text-colour;
+		background-color:$theme-bg-colour;
+	}
+
+	.primary{
+
+		color:$theme-primary-col;
+	}
+
+	.secondary{
+		
+		color:$theme-secondary-col;
+	}
+
+	.tertiary{
+		
+		color:$theme-tertiary-col;
+	}
+
+	.primary-bg{
+
+		background-color:$theme-primary-col;
+	}
+
+	.secondary-bg{
+		
+		background-color:$theme-secondary-col;
+	}
+
+	.tertiary-bg{
+		
+		background-color:$theme-tertiary-col;
+	}
+}
+
+
+
+@include core-theme("dark",$theme-bg-colour);

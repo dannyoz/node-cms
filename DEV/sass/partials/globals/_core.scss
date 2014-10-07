@@ -24,7 +24,7 @@
 .bevelStack{
 
 	@include boxSizing(20px);
-	@include bevelDivider($body-bg,"bottom");
+	@include bevelDivider($theme-bg-colour,"bottom");
 }
 
 
@@ -43,6 +43,8 @@
 
 
 @include grid(12,2%,700px);
+
+
 
 
 

@@ -22572,6 +22572,6 @@ var app = angular.module('app', ['ngRoute'])
         $scope.isLoading = global.isLoading
     })
 
-    $scope.theme = "light"
+    $scope.theme = "dark"
 
 }])
