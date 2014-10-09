@@ -1,11 +1,10 @@
 // Import all the sass partials for compilation
 
+// 1. Pre-defined vars and Mixins
+// =====================================================
 @import
-// Import the standard reset styles via compass and adding CSS3 support
-	"compass/reset",
 	"compass/css3",
-
-// =====================================================	
+	
 
 // Import variables
 	"variables/colours",
@@ -22,11 +21,14 @@
 	"mixins/typography",
 	"mixins/core",
 
+
+// 2. css Outputters
 // =====================================================
 
 // Import global partials
 	"partials/globals/core",
 	"partials/globals/links",
+	"partials/globals/panels",
 
 // Import layout partials
 	"partials/layout/forms",
