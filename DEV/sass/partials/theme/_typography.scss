@@ -60,6 +60,23 @@ h6{
     }   
 }
 
+.section-heading{
+
+    position:relative;
+    color:#eeeeee;
+
+    &:before{
+
+        position:absolute;
+        left:-15px;
+        width:5px;
+        height:100%;
+        background:$theme-primary-col;
+        @include afterBefore;
+
+    }
+}
+
 
 p{
 
@@ -68,7 +85,6 @@ p{
     font:{
         size: 0.9em;
     }
-    //@extend .open-sans;
 }
 
 blockquote{
@@ -80,6 +96,5 @@ blockquote{
     font:{
         size: 1em;
     }
-    //@extend .open-sans;
     @include boxSizing(20px);
 }

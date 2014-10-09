@@ -5,7 +5,6 @@
 @import
 	"compass/css3",
 	
-
 // Import variables
 	"variables/colours",
 	"variables/theme-settings",
@@ -29,14 +28,13 @@
 	"partials/globals/core",
 	"partials/globals/links",
 	"partials/globals/panels",
+	"partials/globals/forms",
 
-// Import layout partials
-	"partials/layout/forms",
-
-// =====================================================
 // Import Theme specific partials
 	"partials/theme/light",
 	"partials/theme/typography",	
 
 // Import module partials
 	"partials/modules/animations";
+
+// =====================================================

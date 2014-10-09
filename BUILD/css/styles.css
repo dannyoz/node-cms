@@ -54,6 +54,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+body {
+  background: #222222;
+  color: #AAAAAA;
+  font-size: 1.3em;
+}
+
 /* =========================================*/
 /* CORE GLOBALS                             */
 /* =========================================*/
@@ -415,7 +421,7 @@ textarea, input[type=text], input[type=email], input[type=password], input[type=
   box-sizing: border-box;
   background-color: #1a1a1a;
   border: 1px solid #2a2a2a;
-  color: #bfbfbf;
+  color: #9d9d9d;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
@@ -423,7 +429,7 @@ textarea, input[type=text], input[type=email], input[type=password], input[type=
 textarea:hover, input[type=text]:hover, input[type=email]:hover, input[type=password]:hover, input[type=url]:hover, input[type=tel]:hover, input[type=search]:hover {
   background-color: #151515;
   border: 1px solid #2f2f2f;
-  color: #cccccc;
+  color: #AAAAAA;
 }
 textarea:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=url]:focus, input[type=tel]:focus, input[type=search]:focus {
   background-color: #151515;
@@ -513,35 +519,6 @@ textarea:focus, input[type=text]:focus, input[type=email]:focus, input[type=pass
   border: 1px solid #626262;
 }
 
-body.dark {
-  color: #cccccc;
-  background-color: #222222;
-}
-
-.primary {
-  color: #e7a753;
-}
-
-.secondary {
-  color: #aa4f40;
-}
-
-.tertiary {
-  color: #c37a3f;
-}
-
-.primary-bg {
-  background-color: #e7a753;
-}
-
-.secondary-bg {
-  background-color: #aa4f40;
-}
-
-.tertiary-bg {
-  background-color: #c37a3f;
-}
-
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -619,6 +596,21 @@ h6 {
   font-weight: 700;
 }
 
+.section-heading {
+  position: relative;
+  color: #eeeeee;
+}
+.section-heading:before {
+  position: absolute;
+  left: -15px;
+  width: 5px;
+  height: 100%;
+  background: #e7a753;
+  display: block;
+  content: ".";
+  text-indent: -10000px;
+}
+
 p {
   margin-bottom: 1em;
   line-height: 1.5em;
@@ -672,34 +664,31 @@ EXAMPLES OF DEFINING KEYFRAMES USING MIXINS -----
 		}
 
 */
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes $animationName {
   0% {
     -webkit-transform: scale(0.8);
     opacity: 0;
   }
-
   100% {
     -webkit-transform: scale(1);
     opacity: 1;
   }
 }
-@-moz-keyframes fadeIn {
+@-moz-keyframes $animationName {
   0% {
     -moz-transform: scale(0.8);
     opacity: 0;
   }
-
   100% {
     -moz-transform: scale(1);
     opacity: 1;
   }
 }
-@keyframes fadeIn {
+@keyframes $animationName {
   0% {
     transform: scale(0.8);
     opacity: 0;
   }
-
   100% {
     transform: scale(1);
     opacity: 1;
