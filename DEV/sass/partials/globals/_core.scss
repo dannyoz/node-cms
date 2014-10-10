@@ -6,6 +6,14 @@ body{
 	color:$theme-text-colour;
 	font-size:1.3em;
 
+	@media screen and (max-width:$medium-screens){
+		font-size:1.1em;
+	}
+
+	@media screen and (max-width:$small-screens){
+		font-size:0.9em;
+	}
+
 }
 
 // ===============================================================
