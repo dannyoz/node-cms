@@ -27,7 +27,7 @@ body{
 		borderBox   : true,                    // Adds .border-box class with vendor prefixes
 		transitions : 0.25s 0.5s 0.75s 1s,     // Loop to create transition classes
 		centre      : true,                    // Adds css3 centring classes
-		fadeIn      : false                    // Adds satggering elements for the fadeIn animation
+		fadeIn      : true                     // Adds satggering elements for the fadeIn animation
 	);
 
 	@include core($core-config);

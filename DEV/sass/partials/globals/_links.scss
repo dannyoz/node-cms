@@ -26,7 +26,7 @@ a{
 }
 
 
-button{
+button, .button{
 
 	
 	outline:0;
@@ -44,6 +44,7 @@ button{
 		border-color:darken($theme-subtle-light,6%);
 		background:lighten($theme-subtle-light,5%);
 		color: lighten($theme-text-colour ,25%);
+		text-decoration: none;
 	}
 
 	@each $name, $colour in $theme-colours {

@@ -84,19 +84,19 @@ body {
   clear: both;
 }
 
-.rounded-5px, button.small {
+.rounded-5px, button.small, .button.small {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 
-.rounded-10px, button.medium {
+.rounded-10px, button.medium, .button.medium {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
 
-.rounded-15px, button.large {
+.rounded-15px, button.large, .button.large {
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
@@ -168,6 +168,37 @@ body {
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+.fadeIn:nth-child(1) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.fadeIn:nth-child(2) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.fadeIn:nth-child(3) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+.fadeIn:nth-child(4) {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+.fadeIn:nth-child(5) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 /* =========================================*/
@@ -690,7 +721,7 @@ a:active {
   text-decoration: underline;
 }
 
-button {
+button, .button {
   outline: 0;
   margin-bottom: 20px;
   border-top: 1px solid #1d1d1d;
@@ -701,12 +732,13 @@ button {
   color: #AAAAAA;
   text-shadow: -1px -1px 0 #2a2a2a;
 }
-button:hover, button:focus {
+button:hover, button:focus, .button:hover, .button:focus {
   border-color: #1f1f1f;
   background: #3c3c3c;
   color: #eaeaea;
+  text-decoration: none;
 }
-button.primary {
+button.primary, .button.primary {
   border-top: 1px solid #e49c3d;
   border-left: 1px solid #e49c3d;
   border-right: 1px solid #e49c3d;
@@ -715,12 +747,12 @@ button.primary {
   color: #774b11;
   text-shadow: 1px 1px 0 #edbe80;
 }
-button.primary:hover, button.primary:focus {
+button.primary:hover, button.primary:focus, .button.primary:hover, .button.primary:focus {
   border-color: #d0831d;
   background: #f8bf75;
   color: #4a2f0a;
 }
-button.secondary {
+button.secondary, .button.secondary {
   border-top: 1px solid #974639;
   border-left: 1px solid #974639;
   border-right: 1px solid #974639;
@@ -729,12 +761,12 @@ button.secondary {
   color: #28130f;
   text-shadow: 1px 1px 0 #c16a5c;
 }
-button.secondary:hover, button.secondary:focus {
+button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
   border-color: #72352b;
   background: #d25e4b;
   color: #030201;
 }
-button.tertiary {
+button.tertiary, .button.tertiary {
   border-top: 1px solid #b16e37;
   border-left: 1px solid #b16e37;
   border-right: 1px solid #b16e37;
@@ -743,22 +775,22 @@ button.tertiary {
   color: #3d2613;
   text-shadow: 1px 1px 0 #cf9566;
 }
-button.tertiary:hover, button.tertiary:focus {
+button.tertiary:hover, button.tertiary:focus, .button.tertiary:hover, .button.tertiary:focus {
   border-color: #8a562b;
   background: #de9357;
   color: #160d07;
 }
-button.large {
+button.large, .button.large {
   padding: 15px 30px;
   font-weight: 700;
   font-size: 1em;
 }
-button.medium {
+button.medium, .button.medium {
   padding: 10px 20px;
   font-weight: 700;
   font-size: 0.8em;
 }
-button.small {
+button.small, .button.small {
   padding: 7px 10px;
   font-weight: 700;
   font-size: 0.7em;
@@ -1013,6 +1045,10 @@ h6 {
   font-weight: bold;
   font-size: 1em;
   margin-bottom: 0.6em;
+}
+
+.text-centred {
+  text-align: center;
 }
 
 .epic {
