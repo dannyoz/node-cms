@@ -21,7 +21,7 @@ body{
 
 	$core-config : (
 
-		container   : 1000px,                  // Creates a centralised .container class
+		container   : $containerWidth,                  // Creates a centralised .container class
 		stack       : true,                    // Creates a stackable element class
 		rounded     : 5px 10px 15px 20px,      // Loop to create rounded element classes
 		borderBox   : true,                    // Adds .border-box class with vendor prefixes
@@ -51,13 +51,14 @@ body{
 	margin-bottom:20px;
 	position:relative;
 
-	p{
-		@include centre;
+	span{
+		
+		font-size: 0.8em;
 	}
 }
 
 
-@include grid(12,2%,$small-screens);
+@include grid(12,2%,$small-screens,true,true);
 
 
 

@@ -10,6 +10,7 @@
 	$unit : $remainder / $col-count;
 
 	float:left;
+	position:relative;
 	width:$unit*$ammount+$fill;
 	margin-right:$gutter-width;
 }
@@ -52,7 +53,7 @@
 
 }
 
-@mixin grid ($col-count:12,$gutter-width:2%,$stack-point:550px,$shift:true){
+@mixin grid ($col-count:12,$gutter-width:2%,$stack-point:550px,$shift:true,$dividers:false){
 
 	/* =========================================*/
 	/* GRID STYLES                              */
@@ -72,7 +73,38 @@
 	@for $i from 1 through $col-count{
 
 		.grid-#{$i}{
-			@include grid-col($i,$col-count,$gutter-width)
+			@include grid-col($i,$col-count,$gutter-width);
+
+			@if $dividers {
+
+				&.grid-divide-right:after{
+
+					position: absolute;
+					width:1px;
+					height:100%;
+					right:-($gutter-width*($col-count - $i));
+					top:0;
+					background-color:$theme-subtle-dark;
+					border-right:1px solid $theme-subtle-light;
+					@include afterBefore;
+
+				}
+
+				&.grid-divide-left:before{
+
+					position: absolute;
+					width:1px;
+					height:100%;
+					left:-($gutter-width*($col-count - $i));
+					top:0;
+					background-color:$theme-subtle-dark;
+					border-right:1px solid $theme-subtle-light;
+					@include afterBefore;
+
+				}
+
+			}
+
 		}
 
 		@if $shift {
@@ -92,6 +124,23 @@
 		// }
 
 	}
+
+
+	// .grid-divide-right{
+
+	// 	&:after{
+
+	// 		position: absolute;
+	// 		width:1px;
+	// 		height:100%;
+	// 		right:-($gutter-width*4);
+	// 		top:0;
+	// 		background-color:$theme-subtle-dark;
+	// 		border-right:1px solid $theme-subtle-light;
+	// 		@include afterBefore;
+
+	// 	}
+	// }
 
 	[class*="grid"]:last-child{
 		margin-right:0;

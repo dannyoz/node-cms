@@ -44,8 +44,16 @@ h5{
 
 h6{
 
+    font-weight: bold;
     font-size:1em;
     margin-bottom: 0.6em;   
+}
+
+.epic{
+
+    font-size: 3em;
+    color: white;
+    text-shadow: 0 2px 0 $theme-subtle-light;
 }
 
 p{
@@ -54,6 +62,13 @@ p{
     line-height: 1.5em;
     font:{
         size: 0.9em;
+    }
+
+    img{
+
+        float: left;
+        max-width: 100%;
+        margin: 0 20px 20px 0;
     }
 
     @media screen and (max-width:$small-screens){
@@ -139,11 +154,53 @@ blockquote{
     font-style:italic;
     margin-bottom: 1em;
     line-height: 1.5em;
-    background:darken($theme-bg-colour,2%);
     font:{
         size: 1em;
     }
-    @include boxSizing(20px);
+    @include boxSizing(20px 20px 20px 40px);
+
+    @if $theme-style == "dark" {
+
+        border-left : 10px solid $theme-subtle-light;
+        p{
+            color: lighten($theme-text-colour,25%);
+        }
+    }
+
+    @if $theme-style == "light" {
+
+        border-left : 10px solid $theme-subtle-dark;
+
+        p{
+            color: darken($theme-text-colour,25%);
+        }
+    }
+
+    p:before{
+
+        content: "''";
+        font-size: 2em;
+        display: inline;
+        margin-left:-0.4em;
+    }
+
+    p:after{
+
+        content: "''";
+        font-size: 2em;
+        display: inline;
+        margin-right:-0.4em;
+    }
+
+    cite{
+
+        font:{
+            style:normal;
+            size:0.7em;
+        }
+    }
+
+
 }
 
 

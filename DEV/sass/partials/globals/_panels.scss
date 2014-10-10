@@ -54,6 +54,7 @@
 	footer{
 
 		padding:0.6em 1.2em;
+		font-size: 0.7em;
 
 		@if $theme-style == "dark" {
 		
@@ -63,6 +64,14 @@
 		@if $theme-style == "lighten" {
 		
 			border-top: 1px solid darken($theme-bg-colour, 5%);
+		}
+	}
+
+	@media screen and (max-width:$small-screens){
+		font-size:1.4em;
+
+		p{
+			font-size: 0.8em;
 		}
 	}
 }
@@ -144,4 +153,10 @@
 		}
 
 	}
+
+	@media screen and (max-width:$small-screens){
+		font-size:1.4em;
+	}
 }
+
+	

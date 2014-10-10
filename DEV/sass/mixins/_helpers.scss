@@ -1,7 +1,6 @@
 @mixin afterBefore{
 	display:block;
-	content:".";
-	text-indent:-10000px;
+	content:"";
 }
 
 @mixin absolutly($distance:0,$axis1:top,$axis2:left){
