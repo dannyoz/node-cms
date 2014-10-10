@@ -1,6 +1,5 @@
 
-@include open-sans(body p blockquote h4 h5 h6 button);
-@include open-sans-condensed(h1 h2 h3);
+
 
 h1,h2,h3,h4,h5,h6{
 
@@ -58,6 +57,16 @@ h6{
         size:1em;
         weight:700;
     }   
+}
+
+hr{
+    display: block;
+    margin: 20px;
+    height:0;
+    border-left:none;
+    border-right:none;
+    border-top: 1px dashed $theme-subtle-dark;
+    border-bottom: 1px dashed $theme-subtle-light;
 }
 
 .section-heading{

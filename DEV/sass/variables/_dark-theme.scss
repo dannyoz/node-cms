@@ -1,9 +1,13 @@
 // ============================================================
 // DARK THEME v0.7
 // ============================================================
-	// Theme specific vars
+	
+	// THEME STYLE
+	// -------------------------------------------------------
 	$theme-style : "dark"; // "dark" or "light"
 
+	// FONTS
+	// -------------------------------------------------------
 	$primary-font : "Open Sans", sans-serif;
 	$secondary-font : "Open Sans Condensed", sans-serif;
 
@@ -16,7 +20,7 @@
 	$theme-tertiary-col  : #c37a3f;
 
 	//Subtlety
-	$subtlety            : 3%;
+	$subtlety            : 5%;
 	$theme-subtle-light  : lighten($theme-bg-colour,$subtlety);
 	$theme-subtle-dark   : darken($theme-bg-colour,$subtlety);
 
@@ -30,7 +34,8 @@
 
 	// BREAKPOINTS
 	// --------------------------------------------------------
-	$mobile-screens : 550px;
+	$small-screens  : 550px;
+	$medium-screens : 780px;
 
 // ============================================================
 

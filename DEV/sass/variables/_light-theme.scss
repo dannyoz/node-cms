@@ -1,9 +1,13 @@
 // ============================================================
 // LIGHT THEME v0.7
 // ============================================================
-	// Theme specific vars
+
+	// THEME STYLE
+	// -------------------------------------------------------
 	$theme-style : "light"; // "dark" or "light"
 
+	// FONTS
+	// -------------------------------------------------------
 	$primary-font : "Open Sans", sans-serif;
 	$secondary-font : "Open Sans Condensed", sans-serif;
 
@@ -22,15 +26,15 @@
 
 	//For loop mapping
 	$theme-colours : (
-		primary   : $theme-primary-col, 
-		secondary : $theme-secondary-col, 
-		tertiary  : $theme-tertiary-col
+		primary    : $theme-primary-col, 
+		secondary  : $theme-secondary-col, 
+		tertiary   : $theme-tertiary-col
 	);
 
 
 	// BREAKPOINTS
 	// --------------------------------------------------------
-	$mobile-screens : 550px;
-
+	$small-screens  : 550px;
+	$medium-screens : 780px;
 
 // ============================================================

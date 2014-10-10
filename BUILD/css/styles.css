@@ -86,7 +86,13 @@ body {
   border-radius: 10px;
 }
 
-.rounded-20px, button.large {
+.rounded-15px, button.large {
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.rounded-20px {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
@@ -371,7 +377,7 @@ body {
   margin-right: 0;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 550px) {
   [class*="grid"] {
     margin-left: 0;
     margin-right: 0;
@@ -598,44 +604,6 @@ textarea:focus, input[type=text]:focus, input[type=email]:focus, input[type=pass
   border: 1px solid #626262;
 }
 
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Open Sans"), local("OpenSans"), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local("Open Sans Semibold"), local("OpenSans-Semibold"), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format("woff");
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 800;
-  src: local("Open Sans Extrabold"), local("OpenSans-Extrabold"), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff) format("woff");
-}
-.open-sans, body, p, blockquote, h4, h5, h6, button {
-  font-family: "Open Sans", sans-serif;
-}
-
-@font-face {
-  font-family: 'Open Sans Condensed';
-  font-style: normal;
-  font-weight: 300;
-  src: local("Open Sans Cond Light"), local("OpenSans-CondensedLight"), url(http://themes.googleusercontent.com/static/fonts/opensanscondensed/v7/gk5FxslNkTTHtojXrkp-xF1YPouZEKgzpqZW9wN-3Ek.woff) format("woff");
-}
-@font-face {
-  font-family: 'Open Sans Condensed';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Open Sans Condensed Bold"), local("OpenSans-CondensedBold"), url(http://themes.googleusercontent.com/static/fonts/opensanscondensed/v7/gk5FxslNkTTHtojXrkp-xONSK5BxN3NFS4EJkViHIqo.woff) format("woff");
-}
-.open-sans-condensed, h1, h2, h3 {
-  font-family: "Open Sans Condensed", sans-serif;
-}
-
 h1, h2, h3, h4, h5, h6 {
   text-align: left;
   margin-bottom: 0.4em;
@@ -675,6 +643,16 @@ h6 {
   font-weight: 700;
 }
 
+hr {
+  display: block;
+  margin: 20px;
+  height: 0;
+  border-left: none;
+  border-right: none;
+  border-top: 1px dashed #151515;
+  border-bottom: 1px dashed #2f2f2f;
+}
+
 .section-heading {
   position: relative;
   color: #eeeeee;
@@ -711,13 +689,13 @@ blockquote {
 .columns {
   -webkit-column-count: 3;
   -webkit-column-gap: 40px;
-  -webkit-column-rule: 1px outset #2a2a2a;
+  -webkit-column-rule: 1px outset #2f2f2f;
   -moz-column-count: 3;
   -moz-column-gap: 40px;
-  -moz-column-rule: 1px outset #2a2a2a;
+  -moz-column-rule: 1px outset #2f2f2f;
   column-count: 3;
   column-gap: 40px;
-  column-rule: 1px outset #2a2a2a;
+  column-rule: 1px outset #2f2f2f;
 }
 @media screen and (max-width: 700px) {
   .columns {
@@ -731,6 +709,44 @@ blockquote {
     column-gap: 0;
     column-rule: none;
   }
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format("woff");
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local("Open Sans Extrabold"), local("OpenSans-Extrabold"), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff) format("woff");
+}
+.open-sans, body, p, blockquote, h4, h5, h6, button {
+  font-family: "Open Sans", sans-serif;
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Open Sans Cond Light"), local("OpenSans-CondensedLight"), url(http://themes.googleusercontent.com/static/fonts/opensanscondensed/v7/gk5FxslNkTTHtojXrkp-xF1YPouZEKgzpqZW9wN-3Ek.woff) format("woff");
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Open Sans Condensed Bold"), local("OpenSans-CondensedBold"), url(http://themes.googleusercontent.com/static/fonts/opensanscondensed/v7/gk5FxslNkTTHtojXrkp-xONSK5BxN3NFS4EJkViHIqo.woff) format("woff");
+}
+.open-sans-condensed, h1, h2, h3 {
+  font-family: "Open Sans Condensed", sans-serif;
 }
 
 /*

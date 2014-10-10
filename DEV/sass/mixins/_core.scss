@@ -8,7 +8,6 @@
 	$container   : map-get($config,container);
 	$rounded     : map-get($config,rounded);
 	$border-box  : map-get($config,borderBox);
-	$form-bbox   : map-get($config,formBox);
 	$transitions : map-get($config,transitions);
 	$fitParent   : map-get($config,fitParent);
 	$centre      : map-get($config,centre);
@@ -51,20 +50,6 @@
 	@if $border-box {
 
 		.border-box{
-			@include box-sizing(border-box);
-		}
-	}
-
-	@if $form-bbox {
-		
-		fieldset,
-		textarea,
-		input[type="text"],
-		input[type="email"], 
-		input[type="password"], 
-		input[type="url"], 
-		input[type="tel"], 
-		input[type="search"]{
 			@include box-sizing(border-box);
 		}
 	}

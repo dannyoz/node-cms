@@ -15,9 +15,8 @@ body{
 
 		container   : 1000px,                  // Creates a centralised .container class
 		stack       : true,                    // Creates a stackable element class
-		rounded     : 5px 10px 20px,           // Loop to create rounded element classes
-		borderBox   : true,                    // Adds border-box styles to all elements
-		formBox     : false,                   // Adds border-box styles to relevent form elements
+		rounded     : 5px 10px 15px 20px,      // Loop to create rounded element classes
+		borderBox   : true,                    // Adds .border-box class with vendor prefixes
 		transitions : 0.25s 0.5s 0.75s 1s,     // Loop to create transition classes
 		centre      : true,                    // Adds css3 centring classes
 		fadeIn      : false                    // Adds satggering elements for the fadeIn animation
@@ -50,7 +49,7 @@ body{
 }
 
 
-@include grid(12,2%,700px);
+@include grid(12,2%,$small-screens);
 
 
 
