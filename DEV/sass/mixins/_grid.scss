@@ -161,6 +161,14 @@
 			margin-right: 0;
 			width: 100%;
 		}
+
+		@if $dividers {
+
+			.grid-divide-right:after, .grid-divide-left:before {
+				display: none!important;
+			}
+
+		}
 	}
 
 	/* =========================================*/

@@ -663,6 +663,10 @@ body {
     margin-right: 0;
     width: 100%;
   }
+
+  .grid-divide-right:after, .grid-divide-left:before {
+    display: none !important;
+  }
 }
 /* =========================================*/
 a, button, input {
@@ -689,6 +693,18 @@ a:active {
 button {
   outline: 0;
   margin-bottom: 20px;
+  border-top: 1px solid #1d1d1d;
+  border-left: 1px solid #1d1d1d;
+  border-right: 1px solid #1d1d1d;
+  border-bottom: 5px solid #1d1d1d;
+  background: #2f2f2f;
+  color: #AAAAAA;
+  text-shadow: -1px -1px 0 #2a2a2a;
+}
+button:hover, button:focus {
+  border-color: #1f1f1f;
+  background: #3c3c3c;
+  color: #eaeaea;
 }
 button.primary {
   border-top: 1px solid #e49c3d;
