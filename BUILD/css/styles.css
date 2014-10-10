@@ -56,7 +56,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 body {
   background: #222222;
-  color: #AAAAAA;
+  color: #aaaaaa;
   font-size: 1.3em;
 }
 
@@ -74,19 +74,19 @@ body {
   clear: both;
 }
 
-.rounded-5px {
+.rounded-5px, button.small {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 
-.rounded-10px {
+.rounded-10px, button.medium {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
 
-.rounded-20px {
+.rounded-20px, button.large {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
@@ -383,6 +383,85 @@ a, button, input {
   cursor: pointer;
 }
 
+a:link {
+  color: #e7a753;
+  text-decoration: none;
+}
+a:visited {
+  color: #aa4f40;
+  text-decoration: none;
+}
+a:hover {
+  color: #edbe80;
+  text-decoration: underline;
+}
+a:active {
+  color: #aaaaaa;
+  text-decoration: underline;
+}
+
+button {
+  outline: 0;
+  margin-bottom: 20px;
+}
+button.primary {
+  border-top: 1px solid #e49c3d;
+  border-left: 1px solid #e49c3d;
+  border-right: 1px solid #e49c3d;
+  border-bottom: 5px solid #e49c3d;
+  background: #e7a753;
+  color: #774b11;
+  text-shadow: 1px 1px 0 #edbe80;
+}
+button.primary:hover, button.primary:focus {
+  border-color: #d0831d;
+  background: #f8bf75;
+  color: #4a2f0a;
+}
+button.secondary {
+  border-top: 1px solid #974639;
+  border-left: 1px solid #974639;
+  border-right: 1px solid #974639;
+  border-bottom: 5px solid #974639;
+  background: #aa4f40;
+  color: #28130f;
+  text-shadow: 1px 1px 0 #c16a5c;
+}
+button.secondary:hover, button.secondary:focus {
+  border-color: #72352b;
+  background: #d25e4b;
+  color: #030201;
+}
+button.tertiary {
+  border-top: 1px solid #b16e37;
+  border-left: 1px solid #b16e37;
+  border-right: 1px solid #b16e37;
+  border-bottom: 5px solid #b16e37;
+  background: #c37a3f;
+  color: #3d2613;
+  text-shadow: 1px 1px 0 #cf9566;
+}
+button.tertiary:hover, button.tertiary:focus {
+  border-color: #8a562b;
+  background: #de9357;
+  color: #160d07;
+}
+button.large {
+  padding: 15px 30px;
+  font-weight: 700;
+  font-size: 1em;
+}
+button.medium {
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+button.small {
+  padding: 7px 10px;
+  font-weight: 700;
+  font-size: 0.7em;
+}
+
 .panel {
   background-color: #2a2a2a;
   border: 1px solid #313131;
@@ -429,7 +508,7 @@ textarea, input[type=text], input[type=email], input[type=password], input[type=
 textarea:hover, input[type=text]:hover, input[type=email]:hover, input[type=password]:hover, input[type=url]:hover, input[type=tel]:hover, input[type=search]:hover {
   background-color: #151515;
   border: 1px solid #2f2f2f;
-  color: #AAAAAA;
+  color: #aaaaaa;
 }
 textarea:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=url]:focus, input[type=tel]:focus, input[type=search]:focus {
   background-color: #151515;
@@ -537,7 +616,7 @@ textarea:focus, input[type=text]:focus, input[type=email]:focus, input[type=pass
   font-weight: 800;
   src: local("Open Sans Extrabold"), local("OpenSans-Extrabold"), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff) format("woff");
 }
-.open-sans, body, p, blockquote, h4, h5, h6 {
+.open-sans, body, p, blockquote, h4, h5, h6, button {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -629,6 +708,31 @@ blockquote {
   padding: 20px;
 }
 
+.columns {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 40px;
+  -webkit-column-rule: 1px outset #2a2a2a;
+  -moz-column-count: 3;
+  -moz-column-gap: 40px;
+  -moz-column-rule: 1px outset #2a2a2a;
+  column-count: 3;
+  column-gap: 40px;
+  column-rule: 1px outset #2a2a2a;
+}
+@media screen and (max-width: 700px) {
+  .columns {
+    -webkit-column-count: 1;
+    -webkit-column-gap: 0;
+    -webkit-column-rule: none;
+    -moz-column-count: 1;
+    -moz-column-gap: 0;
+    -moz-column-rule: none;
+    column-count: 1;
+    column-gap: 0;
+    column-rule: none;
+  }
+}
+
 /*
 ##############################################################
 EXAMPLES OF DEFINING KEYFRAMES USING MIXINS -----
@@ -664,31 +768,34 @@ EXAMPLES OF DEFINING KEYFRAMES USING MIXINS -----
 		}
 
 */
-@-webkit-keyframes $animationName {
+@-webkit-keyframes fadeIn {
   0% {
     -webkit-transform: scale(0.8);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: scale(1);
     opacity: 1;
   }
 }
-@-moz-keyframes $animationName {
+@-moz-keyframes fadeIn {
   0% {
     -moz-transform: scale(0.8);
     opacity: 0;
   }
+
   100% {
     -moz-transform: scale(1);
     opacity: 1;
   }
 }
-@keyframes $animationName {
+@keyframes fadeIn {
   0% {
     transform: scale(0.8);
     opacity: 0;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;

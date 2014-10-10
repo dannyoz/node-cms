@@ -1,5 +1,5 @@
 
-@include open-sans(body p blockquote h4 h5 h6);
+@include open-sans(body p blockquote h4 h5 h6 button);
 @include open-sans-condensed(h1 h2 h3);
 
 h1,h2,h3,h4,h5,h6{
@@ -98,3 +98,7 @@ blockquote{
     }
     @include boxSizing(20px);
 }
+
+
+@include column-text(3,40px,700px);
+

@@ -4,27 +4,27 @@ $theme-style : "dark"; // "dark" or "light"
 $primary-font : "Open Sans", sans-serif;
 $secondary-font : "Open Sans Condensed", sans-serif;
 
-//Colours
-$theme-bg-colour     : #222222;
-$theme-text-colour   : #AAAAAA;
-$theme-primary-col   : #e7a753;
-$theme-secondary-col : #aa4f40;
-$theme-tertiary-col  : #c37a3f;
+// COLOURS
+// =============================================================
+	$theme-bg-colour     : #222222;
+	$theme-text-colour   : #AAAAAA;
+	$theme-primary-col   : #e7a753;
+	$theme-secondary-col : #aa4f40;
+	$theme-tertiary-col  : #c37a3f;
 
-//Forms
-$form-theme-config : (
+	//Subtlety
+	$subtlety            : 3%;
+	$theme-subtle-light  : lighten($theme-bg-colour,$subtlety);
+	$theme-subtle-dark   : darken($theme-bg-colour,$subtlety);
 
-	inputs      : "text" "email" "password" "url" "tel" "search",
-	fontFace    : 0.8em $primary-font,
-	dimensions  : (
-		fmPadding   : 20px,
-		fmRounding  : 10px
-	),
-	modern-checks : (
-		dialColour : grey,
-		mcHeight   : 25px,
-		mcWidth    : 65px,
-		rounding   : 5px,
-		insetAmt   : 2px
-	)
-);
+	//For loop mapping
+	$theme-colours : (
+		primary   : $theme-primary-col, 
+		secondary : $theme-secondary-col, 
+		tertiary  : $theme-tertiary-col
+	);
+
+
+// BREAKPOINTS
+// ==============================================================
+	$mobile-screens : 550px;
