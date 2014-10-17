@@ -4,13 +4,13 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        imagemin: {                                // Task
-            dynamic: {                             // Another target
+        imagemin: {                               
+            dynamic: {                            
                 files: [{
-                    expand: true,                  // Enable dynamic expansion
-                    cwd: 'images/',                   // Src matches are relative to this path
-                    src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-                    dest: 'BUILD/images/'                  // Destination path prefix
+                    expand: true,                  
+                    cwd: 'DEV/images/',             
+                    src: ['**/*.{png,jpg,gif}'],   
+                    dest: 'BUILD/images/'            
                 }]
             }
         },
@@ -18,32 +18,44 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: [
-                    //'js/libs/*.js', // All JS in the libs folder
                     'DEV/js/libs/angular.js',
                     'DEV/js/libs/angular-route.js',
-                    'DEV/js/app.js',
-                    'DEV/js/directives/*.js',
-                    'DEV/js/factories/*.js',
-                    'DEV/js/controllers/*.js'
+                    'DEV/app/app.js',
+                    'DEV/app/app.routes.js',
+                    'DEV/app/app.global.service.js',
+                    'DEV/app/global/*.js',
+                    'DEV/app/global/*/*.js',
+                    'DEV/app/global/*/*/*.js',
+                    'DEV/app/modules/*.js',
+                    'DEV/app/modules/*/*.js',
+                    'DEV/app/modules/*/*/*.js'
                 ],
-                dest: 'BUILD/js/main.js',
+                dest: 'DEV/js/main.js',
             }
         },
 
         uglify: {
             build: {
-                src: 'BUILD/js/main.js',
+                src: 'DEV/js/main.js',
                 dest: 'BUILD/js/main.min.js'
             }
         },
 
         watch: {
             scripts: {
-                files: ['DEV/js/*.js',
-                        'DEV/js/directives/*.js',
-                        'DEV/js/factories/*.js',
-                        'DEV/js/controllers/*.js'
-                        ],
+                files: [
+                    'DEV/js/libs/angular.js',
+                    'DEV/js/libs/angular-route.js',
+                    'DEV/app/app.js',
+                    'DEV/app/app.routes.js',
+                    'DEV/app/app.global.service.js',
+                    'DEV/app/global/*.js',
+                    'DEV/app/global/*/*.js',
+                    'DEV/app/global/*/*/*.js',
+                    'DEV/app/modules/*.js',
+                    'DEV/app/modules/*/*.js',
+                    'DEV/app/modules/*/*/*.js'
+                ],
                 tasks: ['concat', 'uglify'],
                 options: {
                     spawn: false
@@ -60,6 +72,16 @@ module.exports = function(grunt) {
                 options: {
                     spawn: false,
                 }
+            },
+
+            html: {
+                files:[
+                    'DEV/app/*.html',
+                    'DEV/app/*/*.html',
+                    'DEV/app/*/*/*.html',
+                    'DEV/app/*/*/*/*.html'
+                ],
+                tasks: ['copy']
             },
 
             livereload: {
@@ -88,13 +110,29 @@ module.exports = function(grunt) {
             }
         },
 
+        copy: {
+            main: {
+                expand: true, 
+                //flatten: true,
+                cwd: 'DEV/app/', 
+                src: [
+                    '**.html',
+                    '*/*.html',
+                    '*/*/*.html',
+                    '*/*/*/*.html'
+                    ], 
+                dest: 'BUILD/views/', 
+                filter: 'isFile'
+            },
+        },
+
         express: {
             options: {
                 // Override defaults here
             },
             dev: {
                 options: {
-                  script: 'server.js'
+                    script: 'server.js'
                 }
             }
         }
@@ -109,8 +147,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-express-server');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // RUN GRUNT 
-    grunt.registerTask('default', ['concat', 'uglify', 'express:dev', 'watch', 'compass']);
+    grunt.registerTask('default', ['concat', 'uglify', 'express:dev', 'watch', 'compass', 'copy']);
 
 };

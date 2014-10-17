@@ -22542,36 +22542,36 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 })(window, window.angular);
 var app = angular.module('app', ['ngRoute'])
 
-	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-     	$routeProvider
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+ 	
+ 	$routeProvider
 
-	        .when('/', {
-	        	templateUrl: '/views/home.html'
-	        })
+        .when('/', {
+        	templateUrl: '/views/global/home/home.html'
+        })
 
-	        .when('/styleguide', {
-	        	templateUrl: '/views/styleguide/base.html'
-	    	})
-	        
+        .when('/styleguide', {
+        	templateUrl: '/views/modules/styleguide/base.html'
+    	})
 
-		$locationProvider.html5Mode(true);
-	}])
+    	.when('/ng-masonry', {
+        	templateUrl: '/views/do-masonry.html',
+    	})
+        
 
-
-
+	$locationProvider.html5Mode(true);
+}])
 .factory('global', function() {
 
     return {
     	isLoading : true
     }
 })
-.controller('body', ['$scope', '$http', 'global', function ($scope, $http, global) {
+.controller('nav', ['$scope', '$http', 'global', function ($scope, $http, global) {
 
 	// Check to see if feed has loaded
     $scope.$watch(function(){
         $scope.isLoading = global.isLoading
     })
-
-    $scope.theme = "dark"
 
 }])

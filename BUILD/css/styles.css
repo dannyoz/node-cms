@@ -56,7 +56,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 body {
   background: #222222;
-  color: #AAAAAA;
+  color: #aaaaaa;
   font-size: 1.3em;
 }
 @media screen and (max-width: 780px) {
@@ -717,7 +717,7 @@ a:hover {
   text-decoration: underline;
 }
 a:active {
-  color: #AAAAAA;
+  color: #aaaaaa;
   text-decoration: underline;
 }
 
@@ -729,7 +729,7 @@ button, .button {
   border-right: 1px solid #1d1d1d;
   border-bottom: 5px solid #1d1d1d;
   background: #2f2f2f;
-  color: #AAAAAA;
+  color: #aaaaaa;
   text-shadow: -1px -1px 0 #2a2a2a;
 }
 button:hover, button:focus, .button:hover, .button:focus {
@@ -922,7 +922,7 @@ textarea, input[type=text], input[type=email], input[type=password], input[type=
 textarea:hover, input[type=text]:hover, input[type=email]:hover, input[type=password]:hover, input[type=url]:hover, input[type=tel]:hover, input[type=search]:hover {
   background-color: #151515;
   border: 1px solid #2f2f2f;
-  color: #AAAAAA;
+  color: #aaaaaa;
 }
 textarea:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=url]:focus, input[type=tel]:focus, input[type=search]:focus {
   background-color: #151515;
@@ -1218,6 +1218,10 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
+#nav {
+  display: block;
+}
+
 /*
 ##############################################################
 EXAMPLES OF DEFINING KEYFRAMES USING MIXINS -----
@@ -1253,31 +1257,34 @@ EXAMPLES OF DEFINING KEYFRAMES USING MIXINS -----
 		}
 
 */
-@-webkit-keyframes $animationName {
+@-webkit-keyframes fadeIn {
   0% {
     -webkit-transform: scale(0.8);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: scale(1);
     opacity: 1;
   }
 }
-@-moz-keyframes $animationName {
+@-moz-keyframes fadeIn {
   0% {
     -moz-transform: scale(0.8);
     opacity: 0;
   }
+
   100% {
     -moz-transform: scale(1);
     opacity: 1;
   }
 }
-@keyframes $animationName {
+@keyframes fadeIn {
   0% {
     transform: scale(0.8);
     opacity: 0;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;

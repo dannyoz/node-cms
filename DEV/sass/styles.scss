@@ -34,7 +34,10 @@
 // Import Theme specific partials
 	"partials/theme/typography",
 	"partials/theme/dark-theme-fonts",
-	//"partials/theme/light-theme-fonts",	
+	//"partials/theme/light-theme-fonts",
+
+// Import app layout partials
+	"../app/global/nav/nav",	
 
 // Import module partials
 	"partials/modules/animations";
