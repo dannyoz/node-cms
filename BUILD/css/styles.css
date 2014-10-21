@@ -1222,6 +1222,14 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
+.tiles .tile {
+  float: left;
+  display: block;
+}
+.tiles .tile img {
+  width: 100%;
+}
+
 /*
 ##############################################################
 EXAMPLES OF DEFINING KEYFRAMES USING MIXINS -----

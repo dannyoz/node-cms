@@ -11,9 +11,13 @@
         	templateUrl: '/views/modules/styleguide/base.html'
     	})
 
-    	.when('/ng-masonry', {
-        	templateUrl: '/views/do-masonry.html',
+    	.when('/tiles', {
+        	templateUrl: '/views/modules/tiles/tiles.html',
     	})
+
+        .when('/carousel', {
+            templateUrl: '/views/modules/carousel/carousel.html',
+        })
         
 
 	$locationProvider.html5Mode(true);

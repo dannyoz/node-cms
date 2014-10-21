@@ -76,10 +76,10 @@ module.exports = function(grunt) {
 
             html: {
                 files:[
-                    'DEV/app/*.html',
-                    'DEV/app/*/*.html',
-                    'DEV/app/*/*/*.html',
-                    'DEV/app/*/*/*/*.html'
+                    'DEV/app/*',
+                    'DEV/app/*/*',
+                    'DEV/app/*/*/*',
+                    'DEV/app/*/*/*/*'
                 ],
                 tasks: ['copy']
             },
@@ -91,10 +91,10 @@ module.exports = function(grunt) {
                     'DEV/sass/*.scss', 
                     'DEV/sass/*/*.scss', 
                     'DEV/sass/*/*/*.scss',
-                    'BUILD/js/*.js',
-                    'BUILD/views/*.html',
-                    'BUILD/views/*/*.html',
-                    'BUILD/views/*/*/*.html'
+                    'DEV/app/*',
+                    'DEV/app/*/*',
+                    'DEV/app/*/*/*',
+                    'DEV/app/*/*/*/*'
                     ],
             }
         },
