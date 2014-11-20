@@ -22542,97 +22542,21 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 })(window, window.angular);
 var app = angular.module('app', ['ngRoute'])
 
-.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
- 	
- 	$routeProvider
+	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+	 	
+	 	$routeProvider
 
-        .when('/', {
-        	templateUrl: '/views/global/home/home.html'
-        })
+	        .when('/', {
+	        	templateUrl: '/ng-views/home.html'
+	        })
+	        
 
-        .when('/styleguide', {
-        	templateUrl: '/views/modules/styleguide/base.html'
-    	})
-
-    	.when('/tiles', {
-        	templateUrl: '/views/modules/tiles/tiles.html',
-    	})
-
-        .when('/carousel', {
-            templateUrl: '/views/modules/carousel/carousel.html',
-        })
-        
-
-	$locationProvider.html5Mode(true);
-}])
-.factory('global', function() {
-
-    return {
-    	isLoading : true
-    }
-})
-.controller('nav', ['$scope', '$http', 'global', function ($scope, $http, global) {
-
-	// Check to see if feed has loaded
-    $scope.$watch(function(){
-        $scope.isLoading = global.isLoading
-    })
-
-}])
-
-.controller('carousel', ['$scope', 'global', function ($scope, global) {
-
-	// Check to see if feed has loaded
-    $scope.$watch(function(){
-        $scope.isLoading = global.isLoading
-    })
-
-    $scope.config = {
-    	"bullets"   : true,
-    	"navArrows" : true,
-    	"autoplay"  : true
-    }
-
-    $scope.slides = [{
-    	"title" : "lorem Ipsum",
-    	"copy"  : "lorem Ispum"
-    },{
-    	"title" : "lorem Ipsum",
-    	"copy"  : "lorem Ispum"
-    },{
-    	"title" : "lorem Ipsum",
-    	"copy"  : "lorem Ispum"
-    },{
-        "title" : "lorem Ipsum",
-        "copy"  : "lorem Ispum"
-    }]
-
-}])
-
-.directive('carousel', function(){
-	return{
-		restrict : "AE",
-		replace : true,
-		templateUrl : "/views/modules/carousel/carousel.template.html",
-		scope : {
-			config : "=config",
-			slides : "=slides"
-		},
-		link : function(scope, element, attrs){
-			scope.currentSlide = 0
-		}		
-	}
-})
-.directive('tiles', function(){
-	return{
-		restrict:"AE",
-		link : function(scope,element,attrs){
-
-			var tiles = element.children();
-
-			for (var i = 0; i < tiles.length; i ++ ){
-				console.log(tiles[i].clientHeight, tiles[i].clientWidth)
-			}
+		$locationProvider.html5Mode(true);
+	}])
+.factory('api',function(){
+	return {
+		get : function(){
+			console.log('got');
 		}
 	}
 })

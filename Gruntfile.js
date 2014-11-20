@@ -21,14 +21,12 @@ module.exports = function(grunt) {
                     'DEV/js/libs/angular.js',
                     'DEV/js/libs/angular-route.js',
                     'DEV/app/app.js',
-                    'DEV/app/app.routes.js',
-                    'DEV/app/app.global.service.js',
                     'DEV/app/global/*.js',
                     'DEV/app/global/*/*.js',
                     'DEV/app/global/*/*/*.js',
-                    'DEV/app/modules/*.js',
-                    'DEV/app/modules/*/*.js',
-                    'DEV/app/modules/*/*/*.js'
+                    'DEV/app/templates/*.js',
+                    'DEV/app/templates/*/*.js',
+                    'DEV/app/templates/*/*/*.js'
                 ],
                 dest: 'DEV/js/main.js',
             }
@@ -47,14 +45,12 @@ module.exports = function(grunt) {
                     'DEV/js/libs/angular.js',
                     'DEV/js/libs/angular-route.js',
                     'DEV/app/app.js',
-                    'DEV/app/app.routes.js',
-                    'DEV/app/app.global.service.js',
-                    'DEV/app/global/*.js',
-                    'DEV/app/global/*/*.js',
-                    'DEV/app/global/*/*/*.js',
-                    'DEV/app/modules/*.js',
-                    'DEV/app/modules/*/*.js',
-                    'DEV/app/modules/*/*/*.js'
+                    'DEV/app/global/*',
+                    'DEV/app/global/*/*',
+                    'DEV/app/global/*/*/*',
+                    'DEV/app/templates/*',
+                    'DEV/app/templates/*/*',
+                    'DEV/app/templates/*/*/*'
                 ],
                 tasks: ['concat', 'uglify'],
                 options: {
@@ -64,9 +60,10 @@ module.exports = function(grunt) {
 
             css: {
                 files: [
-                    'DEV/sass/*.scss', 
-                    'DEV/sass/*/*.scss', 
-                    'DEV/sass/*/*/*.scss'
+                    'DEV/app/*.scss',
+                    'DEV/app/*/*.scss',
+                    'DEV/app/*/*/*.scss',
+                    'DEV/app/*/*/*/*.scss'
                 ],
                 tasks: ['compass'],
                 options: {
@@ -88,9 +85,6 @@ module.exports = function(grunt) {
                 options: { livereload: true },
                 files: [
                     'BUILD/css/*.css',
-                    'DEV/sass/*.scss', 
-                    'DEV/sass/*/*.scss', 
-                    'DEV/sass/*/*/*.scss',
                     'DEV/app/*',
                     'DEV/app/*/*',
                     'DEV/app/*/*/*',
@@ -102,7 +96,7 @@ module.exports = function(grunt) {
         compass: {                  
             dist: {                
                 options: {          
-                    sassDir: 'DEV/sass',
+                    sassDir: 'DEV/app',
                     cssDir: 'BUILD/css',
                     noLineComments : true,
                     environment: 'development'
@@ -113,7 +107,7 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 expand: true, 
-                //flatten: true,
+                flatten: true,
                 cwd: 'DEV/app/', 
                 src: [
                     '**.html',
@@ -121,7 +115,7 @@ module.exports = function(grunt) {
                     '*/*/*.html',
                     '*/*/*/*.html'
                     ], 
-                dest: 'BUILD/views/', 
+                dest: 'BUILD/ng-views/', 
                 filter: 'isFile'
             },
         },
