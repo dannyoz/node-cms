@@ -1,6 +1,4 @@
-module.exports = function ($scope,apiService){
-	$scope.homeText = 'This is the homepage'
-	apiService.request('app').success(function(data){
-		$scope.app = data;
-	});
+module.exports = function ($scope){
+	$scope.homeText = 'Welcome!'
+	$scope.strapline = 'This is the homepage... '
 }; 

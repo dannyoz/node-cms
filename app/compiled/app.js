@@ -3,6 +3,9 @@ var angular = require('../node_modules/angular/index');
 var route = require('../node_modules/angular-route/index');
 var app = angular.module('app', ['ngRoute']);
 
+var onLoaded = require('./shared/onLoad');
+app.run(onLoaded);
+
 var routeConfig = require('./routing/routes');
 app.config(routeConfig);
 
@@ -12,7 +15,7 @@ app.controller('homeController', homeController);
 var apiService = require('./services/apiService');
 app.service('apiService', apiService);
 
-},{"../node_modules/angular-route/index":7,"../node_modules/angular/index":9,"./routing/routes":2,"./services/apiService":4,"./views/home/homeController":5}],2:[function(require,module,exports){
+},{"../node_modules/angular-route/index":8,"../node_modules/angular/index":10,"./routing/routes":2,"./services/apiService":4,"./shared/onLoad":5,"./views/home/homeController":6}],2:[function(require,module,exports){
 var routes = require('./routes.json').routes;
 console.log(routes);
 
@@ -49,14 +52,19 @@ module.exports = function ($http) {
 };
 
 },{}],5:[function(require,module,exports){
-module.exports = function ($scope, apiService) {
-	$scope.homeText = 'This is the homepage';
+module.exports = function ($rootScope, apiService) {
 	apiService.request('app').success(function (data) {
-		$scope.app = data;
+		$rootScope.app = data;
 	});
 };
 
 },{}],6:[function(require,module,exports){
+module.exports = function ($scope) {
+	$scope.homeText = 'Welcome!';
+	$scope.strapline = 'This is the homepage... ';
+};
+
+},{}],7:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -1049,11 +1057,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":6}],8:[function(require,module,exports){
+},{"./angular-route":7}],9:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -30072,8 +30080,8 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":8}]},{},[1])
+},{"./angular":9}]},{},[1])

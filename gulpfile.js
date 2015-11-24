@@ -4,9 +4,11 @@ var gulp       = require('gulp');
 var server     = require('gulp-express');
 var browserify = require('gulp-browserify');
 var minifyHtml = require('gulp-minify-html');
+var uglify     = require('gulp-uglify');
 var ngTemplate = require('gulp-ng-template');
 var concat     = require('gulp-concat');
 var sass       = require('gulp-sass');
+var stripDebug = require('gulp-strip-debug');
 
 gulp.task('server', function () {
     server.run(['server.js']);
@@ -38,6 +40,13 @@ gulp.task('scripts', ['browserify','ng-templates'], function() {
     .pipe(gulp.dest('./dist/js'));
 });
 
+gulp.task('jsMin', function () {
+  gulp.src('./dist/js/main.js', {entry: true})
+    .pipe(uglify())
+    .pipe(stripDebug())
+    .pipe(gulp.dest('./dist/js/min'));
+});
+
 gulp.task('sass', function () {
   gulp.src('./app/**/*.scss')
     .pipe(sass({outputStyle: 'nested'}))
@@ -47,7 +56,7 @@ gulp.task('sass', function () {
 
 gulp.task('watch', function () {
   gulp.watch(['app/**/*.js','!app/compiled/*.js','app/**/*.tmpl.html'], ['scripts']);
-  gulp.watch('app/**/*.scss', ['sass']);
+  gulp.watch('app/**/**.*scss', ['sass']);
 });
 
 
