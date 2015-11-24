@@ -1,5 +1,5 @@
-var angular = require('../node_modules/angular/index');
-var route = require('../node_modules/angular-route/index');
+var angular = require('../node_modules/angular/angular.min');
+var route = require('../node_modules/angular-route/angular-route.min');
 var app = angular.module('app', ['ngRoute']);
 
 var onLoaded = require('./shared/onLoad'); 

@@ -9,6 +9,7 @@ var ngTemplate = require('gulp-ng-template');
 var concat     = require('gulp-concat');
 var sass       = require('gulp-sass');
 var stripDebug = require('gulp-strip-debug');
+var ngAnnotate = require('gulp-ng-annotate');
 
 gulp.task('server', function () {
     server.run(['server.js']);
@@ -36,12 +37,14 @@ gulp.task('server', function () {
 
 gulp.task('scripts', ['browserify','ng-templates'], function() {
   return gulp.src(['./app/compiled/app.js','./app/compiled/templates.js'])
+    .pipe(ngAnnotate())
     .pipe(concat('main.js'))
     .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('jsMin', function () {
+gulp.task('jsMin', ['scripts'], function () {
   gulp.src('./dist/js/main.js', {entry: true})
+    .pipe(ngAnnotate())
     .pipe(uglify())
     .pipe(stripDebug())
     .pipe(gulp.dest('./dist/js/min'));
@@ -55,10 +58,10 @@ gulp.task('sass', function () {
 
 
 gulp.task('watch', function () {
-  gulp.watch(['app/**/*.js','!app/compiled/*.js','app/**/*.tmpl.html'], ['scripts']);
+  gulp.watch(['app/**/*.js','!app/compiled/*.js','app/**/*.tmpl.html'], ['jsMin']);
   gulp.watch('app/**/**.*scss', ['sass']);
 });
 
 
 
-gulp.task('default', ['scripts', 'watch']);
+gulp.task('default', ['jsMin', 'watch']);
