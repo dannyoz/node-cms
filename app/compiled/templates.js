@@ -8,7 +8,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('components/header/header.tmpl.html', '<section id="main" class="container">Header goes her</section>');
 
-  $templateCache.put('views/home/home.tmpl.html', '<section><h1>{{homeText}}</h1></section>');
+  $templateCache.put('views/home/home.tmpl.html', '<section><h1>{{homeText}}</h1><h3>{{app.name}}</h3></section>');
 
 }]);
 

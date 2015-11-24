@@ -1,0 +1,7 @@
+{
+	"routes" : [{
+		"path" : "/",
+		"template" : "views/home/home.tmpl.html",
+		"controller" : "homeController"
+	}]
+}

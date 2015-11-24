@@ -5,6 +5,7 @@ var express = require('express'),
 var app = express();
 var port = 3000;
 var server = app.listen(port);
+var routes = require('./app/routing/routes.json').routes;
 
 
 //For static asset files
@@ -13,11 +14,18 @@ var server = app.listen(port);
 });
 
 
-app.get('/', function(req, res) {
-  res.sendfile('./dist/index.html');
+routes.forEach(function(route){
+  app.get(route.path, function(req, res) {
+    res.sendfile('./dist/index.html');
+  });
 });
 
+app.get('/api/:route',function(req,res){
 
+  var json = require('./app/api/'+req.params.route+'.json');
 
+  res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(json));
+});
 
 console.log("Express server listening on port ",port);
