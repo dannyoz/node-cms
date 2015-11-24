@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Angular boilerplate</title>
+	<link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
+</head>
+<body>
+	<header ng-include="'components/header/header.tmpl.html'"></header>
+	<ng-view></ng-view>
+	<footer ng-include="'components/footer/footer.tmpl.html'"></footer>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
