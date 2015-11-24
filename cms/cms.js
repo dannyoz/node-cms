@@ -1,15 +1,15 @@
 var angular = require('../node_modules/angular/index');
 var route = require('../node_modules/angular-route/index');
-var app = angular.module('app', ['ngRoute']);
+var cms = angular.module('cms', ['ngRoute']);
 
-var onLoaded = require('./shared/onLoad');
-	app.run(onLoaded);
+var onLoaded = require('./shared/onLoad'); 
+	cms.run(onLoaded);
 
 var routeConfig = require('./routing/routes'); 
-	app.config(routeConfig);
+	cms.config(routeConfig);
 
 var homeController = require('./views/home/homeController'); 
-	app.controller('homeController',homeController);
+	cms.controller('homeController',homeController);
 
 var apiService = require('./services/apiService'); 
-	app.service('apiService',apiService);
+	cms.service('apiService',apiService);

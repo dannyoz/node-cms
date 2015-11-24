@@ -1,19 +1,19 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var angular = require('../node_modules/angular/index');
 var route = require('../node_modules/angular-route/index');
-var app = angular.module('app', ['ngRoute']);
+var cms = angular.module('cms', ['ngRoute']);
 
 var onLoaded = require('./shared/onLoad');
-app.run(onLoaded);
+cms.run(onLoaded);
 
 var routeConfig = require('./routing/routes');
-app.config(routeConfig);
+cms.config(routeConfig);
 
 var homeController = require('./views/home/homeController');
-app.controller('homeController', homeController);
+cms.controller('homeController', homeController);
 
 var apiService = require('./services/apiService');
-app.service('apiService', apiService);
+cms.service('apiService', apiService);
 
 },{"../node_modules/angular-route/index":8,"../node_modules/angular/index":10,"./routing/routes":2,"./services/apiService":4,"./shared/onLoad":5,"./views/home/homeController":6}],2:[function(require,module,exports){
 var routes = require('./routes.json').routes;
@@ -30085,3 +30085,18 @@ require('./angular');
 module.exports = angular;
 
 },{"./angular":9}]},{},[1])
+;(function(){
+
+'use strict';
+
+angular.module('cms').run(['$templateCache', function($templateCache) {
+
+  $templateCache.put('components/footer/footer.tmpl.html', '<div class="container">footer<ul><li><a href="#" class="item1">Lorem ipsum.</a></li><li><a href="#" class="item2">Perferendis, accusantium.</a></li><li><a href="#" class="item3">Unde, quam.</a></li><li><a href="#" class="item4">Quos, recusandae.</a></li><li><a href="#" class="item5">Dolore, corrupti.</a></li></ul></div>');
+
+  $templateCache.put('components/header/header.tmpl.html', '<section id="main" class="container"><h1 ng-bind="::app.name"></h1></section>');
+
+  $templateCache.put('views/home/home.tmpl.html', '<section id="home-page" class="container"><h1 ng-bind="::homeText"></h1><h3 ng-bind="::strapline"></h3></section>');
+
+}]);
+
+})();
