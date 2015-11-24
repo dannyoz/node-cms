@@ -11,5 +11,8 @@ var routeConfig = require('./routing/routes');
 var homeController = require('./views/home/homeController'); 
 	cms.controller('homeController',homeController);
 
+var editController = require('./views/edit/editController'); 
+	cms.controller('editController',editController);
+
 var apiService = require('./services/apiService'); 
 	cms.service('apiService',apiService);

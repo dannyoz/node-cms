@@ -3,5 +3,9 @@
 		"path" : "/",
 		"template" : "views/home/home.tmpl.html",
 		"controller" : "homeController"
+	},{
+		"path" : "/editor",
+		"template" : "views/edit/edit.tmpl.html",
+		"controller" : "editController"
 	}]
 }
