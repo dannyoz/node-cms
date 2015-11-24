@@ -1,2 +1,6 @@
-@import '../node_modules/spice-sass/src/spice';
-@include normalise;
+
+@import '../node_modules/spice-sass/src/spice',
+		'shared/shared',
+		'components/footer/footer',
+		'components/header/header',
+		'views/home/home';

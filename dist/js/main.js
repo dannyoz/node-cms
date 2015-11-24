@@ -3,28 +3,68 @@ var angular = require('../node_modules/angular/index');
 var route = require('../node_modules/angular-route/index');
 var app = angular.module('app', ['ngRoute']);
 
+var onLoaded = require('./shared/onLoad');
+app.run(onLoaded);
+
+var routeConfig = require('./routing/routes');
+app.config(routeConfig);
+
 var homeController = require('./views/home/homeController');
 app.controller('homeController', homeController);
 
-app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+var apiService = require('./services/apiService');
+app.service('apiService', apiService);
 
-	$routeProvider.when('/', {
-		templateUrl: 'views/home/home.tmpl.html',
-		controller: 'homeController'
+},{"../node_modules/angular-route/index":8,"../node_modules/angular/index":10,"./routing/routes":2,"./services/apiService":4,"./shared/onLoad":5,"./views/home/homeController":6}],2:[function(require,module,exports){
+var routes = require('./routes.json').routes;
+console.log(routes);
+
+module.exports = function ($routeProvider, $locationProvider) {
+
+	routes.forEach(function (route) {
+		$routeProvider.when(route.path, {
+			templateUrl: route.template,
+			controller: route.controller
+		});
 	});
 
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false
 	});
-}]);
-
-},{"../node_modules/angular-route/index":4,"../node_modules/angular/index":6,"./views/home/homeController":2}],2:[function(require,module,exports){
-module.exports = function ($scope) {
-	$scope.homeText = 'This is the homepage';
 };
 
-},{}],3:[function(require,module,exports){
+},{"./routes.json":3}],3:[function(require,module,exports){
+module.exports={
+	"routes" : [{
+		"path" : "/",
+		"template" : "views/home/home.tmpl.html",
+		"controller" : "homeController"
+	}]
+}
+},{}],4:[function(require,module,exports){
+module.exports = function ($http) {
+	return {
+		request: function (param) {
+			return $http.get("/api/" + param);
+		}
+	};
+};
+
+},{}],5:[function(require,module,exports){
+module.exports = function ($rootScope, apiService) {
+	apiService.request('app').success(function (data) {
+		$rootScope.app = data;
+	});
+};
+
+},{}],6:[function(require,module,exports){
+module.exports = function ($scope) {
+	$scope.homeText = 'Welcome!';
+	$scope.strapline = 'This is the homepage... ';
+};
+
+},{}],7:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -1017,11 +1057,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],4:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":3}],5:[function(require,module,exports){
+},{"./angular-route":7}],9:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -30040,11 +30080,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],6:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":5}]},{},[1])
+},{"./angular":9}]},{},[1])
 ;(function(){
 
 'use strict';
@@ -30053,9 +30093,9 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('components/footer/footer.tmpl.html', '<div class="container">footer<ul><li><a href="#" class="item1">Lorem ipsum.</a></li><li><a href="#" class="item2">Perferendis, accusantium.</a></li><li><a href="#" class="item3">Unde, quam.</a></li><li><a href="#" class="item4">Quos, recusandae.</a></li><li><a href="#" class="item5">Dolore, corrupti.</a></li></ul></div>');
 
-  $templateCache.put('components/header/header.tmpl.html', '<section id="main" class="container">Header goes her</section>');
+  $templateCache.put('components/header/header.tmpl.html', '<section id="main" class="container"><h1 ng-bind="::app.name"></h1></section>');
 
-  $templateCache.put('views/home/home.tmpl.html', '<section><h1>{{homeText}}</h1></section>');
+  $templateCache.put('views/home/home.tmpl.html', '<section id="home-page" class="container"><h1 ng-bind="::homeText"></h1><h3 ng-bind="::strapline"></h3></section>');
 
 }]);
 
