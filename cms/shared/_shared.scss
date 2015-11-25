@@ -1,0 +1,10 @@
+@include normalise;
+@include gridClasses;
+@include containerClass(1100px);
+@include googleFont('open-sans',body button input textarea, 300);
+@include formLined(6px,15px 20px,16px);
+@include formsTheme(#333,#e9e9e9,$col-belize-hole);
+
+.padded-20{
+	padding:20px;
+}

@@ -1,0 +1,33 @@
+$headerHeight:40px;
+$sidebarWidth:120px;
+$header-col:$col-midnight-blue;
+$sidebar-col:$col-wet-asphalt;
+$screen-col:$col-clouds;
+
+
+#main-editor{
+
+	@include fullScreen;
+
+	#header{
+		
+		background-color: $header-col;
+		height:$headerHeight;
+		@include fitContainer(0 0 auto 0);
+	}
+
+	#sidebar{
+		
+		background-color: $sidebar-col;
+		width:$sidebarWidth;
+		@include scrollbar($sidebar-col);
+		@include fitContainer($headerHeight auto 0 0);
+	}
+
+	#screen{
+		
+		background-color: $screen-col;
+		@include scrollbar($screen-col);
+		@include fitContainer($headerHeight 0 0 $sidebarWidth);
+	}
+}

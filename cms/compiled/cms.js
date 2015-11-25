@@ -1,21 +1,24 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var angular = require('../node_modules/angular/index');
 var route = require('../node_modules/angular-route/index');
-var app = angular.module('app', ['ngRoute']);
+var cms = angular.module('cms', ['ngRoute']);
 
 var onLoaded = require('./shared/onLoad');
-app.run(onLoaded);
+cms.run(onLoaded);
 
 var routeConfig = require('./routing/routes');
-app.config(routeConfig);
+cms.config(routeConfig);
 
 var homeController = require('./views/home/homeController');
-app.controller('homeController', homeController);
+cms.controller('homeController', homeController);
+
+var editController = require('./views/edit/editController');
+cms.controller('editController', editController);
 
 var apiService = require('./services/apiService');
-app.service('apiService', apiService);
+cms.service('apiService', apiService);
 
-},{"../node_modules/angular-route/index":8,"../node_modules/angular/index":10,"./routing/routes":2,"./services/apiService":4,"./shared/onLoad":5,"./views/home/homeController":6}],2:[function(require,module,exports){
+},{"../node_modules/angular-route/index":9,"../node_modules/angular/index":11,"./routing/routes":2,"./services/apiService":4,"./shared/onLoad":5,"./views/edit/editController":6,"./views/home/homeController":7}],2:[function(require,module,exports){
 var routes = require('./routes.json').routes;
 
 module.exports = function ($routeProvider, $locationProvider) {
@@ -39,6 +42,10 @@ module.exports={
 		"path" : "/",
 		"template" : "views/home/home.tmpl.html",
 		"controller" : "homeController"
+	},{
+		"path" : "/editor",
+		"template" : "views/edit/edit.tmpl.html",
+		"controller" : "editController"
 	}]
 }
 },{}],4:[function(require,module,exports){
@@ -46,6 +53,9 @@ module.exports = function ($http) {
 	return {
 		request: function (param) {
 			return $http.get("/api/" + param);
+		},
+		submit: function (path, data) {
+			return $http.post(path, data);
 		}
 	};
 };
@@ -58,12 +68,32 @@ module.exports = function ($rootScope, apiService) {
 };
 
 },{}],6:[function(require,module,exports){
-module.exports = function ($scope) {
-	$scope.homeText = 'Welcome!';
-	$scope.strapline = 'This is the homepage... ';
+module.exports = function ($scope, apiService) {
+
+	$scope.editText = 'Edit screen';
+	$scope.textdata = '';
+
+	$scope.update = function (text) {
+
+		var data = {};
+		data.text = text;
+		apiService.submit('/update', data).success(function (response) {
+			console.log(response);
+		});
+	};
 };
 
 },{}],7:[function(require,module,exports){
+module.exports = function ($scope, $location) {
+
+	$scope.homeText = 'Node CMS';
+
+	$scope.editMode = function () {
+		$location.path('/editor');
+	};
+};
+
+},{}],8:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -1056,11 +1086,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":7}],9:[function(require,module,exports){
+},{"./angular-route":8}],10:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -30079,8 +30109,8 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":9}]},{},[1])
+},{"./angular":10}]},{},[1])
