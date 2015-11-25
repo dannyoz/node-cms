@@ -28,4 +28,10 @@ app.get('/api/:route',function(req,res){
     res.send(JSON.stringify(json));
 });
 
+app.post('/update',function(req, res){
+
+	console.log(req.body)
+	res.send('derp');
+})
+
 console.log("Express server listening on port ",port);

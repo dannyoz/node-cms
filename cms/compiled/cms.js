@@ -20,7 +20,6 @@ cms.service('apiService', apiService);
 
 },{"../node_modules/angular-route/index":9,"../node_modules/angular/index":11,"./routing/routes":2,"./services/apiService":4,"./shared/onLoad":5,"./views/edit/editController":6,"./views/home/homeController":7}],2:[function(require,module,exports){
 var routes = require('./routes.json').routes;
-console.log(routes);
 
 module.exports = function ($routeProvider, $locationProvider) {
 
@@ -54,6 +53,9 @@ module.exports = function ($http) {
 	return {
 		request: function (param) {
 			return $http.get("/api/" + param);
+		},
+		submit: function (path, data) {
+			return $http.post(path, data);
 		}
 	};
 };
@@ -66,8 +68,19 @@ module.exports = function ($rootScope, apiService) {
 };
 
 },{}],6:[function(require,module,exports){
-module.exports = function ($scope) {
+module.exports = function ($scope, apiService) {
+
 	$scope.editText = 'Edit screen';
+	$scope.textdata = '';
+
+	$scope.update = function (text) {
+
+		var data = {};
+		data.text = text;
+		apiService.submit('/update', data).success(function (response) {
+			console.log(response);
+		});
+	};
 };
 
 },{}],7:[function(require,module,exports){

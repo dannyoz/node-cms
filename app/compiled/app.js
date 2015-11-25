@@ -17,7 +17,6 @@ app.service('apiService', apiService);
 
 },{"../node_modules/angular-route/index":8,"../node_modules/angular/index":10,"./routing/routes":2,"./services/apiService":4,"./shared/onLoad":5,"./views/home/homeController":6}],2:[function(require,module,exports){
 var routes = require('./routes.json').routes;
-console.log(routes);
 
 module.exports = function ($routeProvider, $locationProvider) {
 

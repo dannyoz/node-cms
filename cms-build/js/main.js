@@ -20,7 +20,6 @@ cms.service('apiService', apiService);
 
 },{"../node_modules/angular-route/index":9,"../node_modules/angular/index":11,"./routing/routes":2,"./services/apiService":4,"./shared/onLoad":5,"./views/edit/editController":6,"./views/home/homeController":7}],2:[function(require,module,exports){
 var routes = require('./routes.json').routes;
-console.log(routes);
 
 module.exports = function ($routeProvider, $locationProvider) {
 
@@ -54,6 +53,9 @@ module.exports = function ($http) {
 	return {
 		request: function (param) {
 			return $http.get("/api/" + param);
+		},
+		submit: function (path, data) {
+			return $http.post(path, data);
 		}
 	};
 };
@@ -66,8 +68,19 @@ module.exports = function ($rootScope, apiService) {
 };
 
 },{}],6:[function(require,module,exports){
-module.exports = function ($scope) {
+module.exports = function ($scope, apiService) {
+
 	$scope.editText = 'Edit screen';
+	$scope.textdata = '';
+
+	$scope.update = function (text) {
+
+		var data = {};
+		data.text = text;
+		apiService.submit('/update', data).success(function (response) {
+			console.log(response);
+		});
+	};
 };
 
 },{}],7:[function(require,module,exports){
@@ -30107,11 +30120,11 @@ module.exports = angular;
 
 angular.module('cms').run(['$templateCache', function($templateCache) {
 
-  $templateCache.put('components/footer/footer.tmpl.html', '<div class="container">footer<ul><li><a href="#" class="item1">Lorem ipsum.</a></li><li><a href="#" class="item2">Perferendis, accusantium.</a></li><li><a href="#" class="item3">Unde, quam.</a></li><li><a href="#" class="item4">Quos, recusandae.</a></li><li><a href="#" class="item5">Dolore, corrupti.</a></li></ul></div>');
-
   $templateCache.put('components/header/header.tmpl.html', '<section id="main" class="container"><h1 ng-bind="::app.name"></h1></section>');
 
-  $templateCache.put('views/edit/edit.tmpl.html', '<section id="main-editor"><div id="header"></div><div id="sidebar"></div><div id="screen"></div></section>');
+  $templateCache.put('components/footer/footer.tmpl.html', '<div class="container">footer<ul><li><a href="#" class="item1">Lorem ipsum.</a></li><li><a href="#" class="item2">Perferendis, accusantium.</a></li><li><a href="#" class="item3">Unde, quam.</a></li><li><a href="#" class="item4">Quos, recusandae.</a></li><li><a href="#" class="item5">Dolore, corrupti.</a></li></ul></div>');
+
+  $templateCache.put('views/edit/edit.tmpl.html', '<section id="main-editor"><div id="header"></div><div id="sidebar"></div><div id="screen"><div class="padded-20"><form class="lined" ng-submit="update(textdata)"><input type="text" placeholder="text" ng-model="textdata"> <button class="primary">Add</button></form></div></div></section>');
 
   $templateCache.put('views/home/home.tmpl.html', '<section id="home-page" class="container"><h1 ng-bind="::homeText"></h1><button ng-click="editMode()" class="primary">Edit</button></section>');
 

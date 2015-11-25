@@ -1,5 +1,4 @@
 var routes = require('./routes.json').routes;
-console.log(routes);
 
 module.exports = function($routeProvider, $locationProvider) {
 	
